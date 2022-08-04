@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 
 import Landing from "./pages/landing";
-import Login from "./pages/servicesPage";
+import Login from "./pages/services";
 import NavBar from "./components/NavBar";
 
 import { ChakraProvider } from "@chakra-ui/react";
