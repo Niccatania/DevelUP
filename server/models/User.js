@@ -1,9 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Project.js
-const projectSchema = require('./Project');
-
 const userSchema = new Schema(
     {
         username: {
@@ -21,7 +18,12 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        projects: [projectSchema]
+        projects: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Project'
+            }
+        ]
     },
     {
         toJSON: {
@@ -45,7 +47,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-// add bookCount field
+// add projectCount field
 userSchema.virtual('projectCount').get(function () {
     return this.projects.length;
 });
