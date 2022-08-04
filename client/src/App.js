@@ -1,23 +1,37 @@
-import React from 'react';
+import "./App.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import Landing from './pages/landing.js'
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+
+import Landing from "./pages/landing";
+import Login from "./pages/servicesPage";
+import NavBar from "./components/NavBar";
+
+import { ChakraProvider } from "@chakra-ui/react";
+
+// const httpLink = createHttpLink({
+//   uri: '/graphql',
+// });
+
+// const client = new ApolloClient({
+//   link: authLink.concat(httpLink),
+//   cache: new InMemoryCache(),
+// });
 
 function App() {
   return (
-   
-  <ChakraProvider>
-      <Landing />
+    //Wrap application in chakra provider at root(TIffany)
+    <div>
+      <ChakraProvider>
+        <Landing />
       </ChakraProvider>
-  
+    </div>
   );
 }
 
