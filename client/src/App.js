@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+
+import Landing from "./pages/landing";
+import Login from "./pages/servicesPage";
+import NavBar from "./components/NavBar";
+
+import { ChakraProvider } from "@chakra-ui/react";
+
+// const httpLink = createHttpLink({
+//   uri: '/graphql',
+// });
+
+// const client = new ApolloClient({
+//   link: authLink.concat(httpLink),
+//   cache: new InMemoryCache(),
+// });
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //Wrap application in chakra provider at root(TIffany)
+    <div>
+      <ChakraProvider>
+        <Landing />
+      </ChakraProvider>
     </div>
   );
 }
