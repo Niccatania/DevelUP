@@ -13,11 +13,7 @@ const developerSchema = new Schema(
             type: String,
             required: true
         },
-        services: [
-            {
-                type: String
-            }
-        ],
+        services: [serviceSchema],
         github: {
             type: String
         },
@@ -34,6 +30,19 @@ const developerSchema = new Schema(
     {
         toJSON: {
             virtuals: true
+        }
+    }
+);
+
+const serviceSchema = new Schema(
+    {
+        description: {
+            type: String,
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
         }
     }
 );
