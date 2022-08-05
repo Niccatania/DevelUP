@@ -17,17 +17,18 @@ import {
 
 const profile = () =>  {
     return (
+        <div>
         <Center> 
             <Heading> Client Profile </Heading>
-        <Center/>
+        </Center>
         <Avatar> User Avitar</Avatar>
 
         <Box>
             <Flex>
-                
+
             </Flex>
         </Box>
-
+        </div>
 
     );
 };
