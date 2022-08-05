@@ -17,9 +17,18 @@ import {
 
 const profile = () =>  {
     return (
-        <Box> 
+        <Center> 
             <Heading> Client Profile </Heading>
+        <Center/>
+        <Avatar> User Avitar</Avatar>
+
+        <Box>
+            <Flex>
+                
+            </Flex>
         </Box>
+
+
     );
 };
 
