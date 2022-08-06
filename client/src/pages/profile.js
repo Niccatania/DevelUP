@@ -29,7 +29,7 @@ import {
 } from "@chakra-ui/react";
 
 
-function profile() {
+function Profile() {
     const { data } = useQuery(QUERY_USER);
     let user;
   
@@ -42,7 +42,7 @@ function profile() {
       <Center>
         <Avatar w="10rem" h="10rem" p="2%" m ="3%">
           {" "}
-          Username
+          ${user.Username}
         </Avatar>
       </Center>
       <Center>
@@ -112,4 +112,4 @@ function profile() {
   );
 };
 
-export default profile;
+export default Profile;

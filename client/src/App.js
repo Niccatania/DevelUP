@@ -56,35 +56,24 @@ const client = new ApolloClient({
 function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
-    <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <ChakraProvider>
+    <ChakraProvider>
+      <ApolloProvider client={client}>
+        <Router>
+          <div>
             <NavBar />
             <Routes>
-              <Route 
-                path="/" 
-                element={<Landing />} 
-              />
+              <Route path="/" element={<Landing />} />
               {/* <Route 
                 path="/login" 
                 element={<Login />} 
               /> */}
-              <Route 
-                path="/profile" 
-                element={<Profile />} 
-              />
-              <Route 
-                path="/devProfile/:devId" 
-                element={<devProfile />} 
-              />
-
-            
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/devProfile/:devId" element={<devProfile />} />
             </Routes>
-          </ChakraProvider>
-        </div>
-      </Router>
-    </ApolloProvider>
+          </div>
+        </Router>
+      </ApolloProvider>
+    </ChakraProvider>
 
     // <div>
     //   <ChakraProvider>
