@@ -12,10 +12,13 @@ const resolvers = {
             return await User.find().populate('projects');
         },
         allDevelopers: async (parent, args, context) => {
-            return await Developer.find().populate('services');
+            return await Developer.find();
         },
         allProjects: async (parent, args, context) => {
             return await Project.find();
+        },
+        allServices: async (parent, args, context) => {
+            return await Service.find().populate('developer');
         },
         user: async (parent, args, context) => {
             if (context.user) {
@@ -52,6 +55,31 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+        addProject: async (parent, { title, description, userid, serviceIds }, context) => {
+            // if (context.user) {
+                let services =[]
+                for(i=0;i<serviceIds.length;i++){
+                    const newserv = await Service.findById(serviceIds[i]).populate('developer');
+                    services.push(newserv);
+                }
+                console.log(services)
+                const project = Project.create({ title, description, services: services });
+
+
+
+                await User.findByIdAndUpdate(userid, {$push: {projects: project } });
+
+                return project
+            // }
+
+            // throw new AuthenticationError('Not logged in');
+        },
+        addService: async (parent, {description, price, devId}, context) => {
+            const dev = await Developer.findById(devId);
+            const service = Service.create({description, price, developer: dev });
+
+            return service;
+        }
     }
 }
 
