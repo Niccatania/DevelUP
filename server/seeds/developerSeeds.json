@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Supriya Sharma",
+        "about": "Lorem Ipsum",
+        "github": "https://github.com/supsha878",
+        "portfolio": "loremipsum.com"
+    },
+    {
+        "name": "Nick Catania",
+        "about": "Lorem Ipsum",
+        "github": "https://github.com/Niccatania",
+        "portfolio": "loremipsum.com"
+    },
+    {
+        "name": "Owen Greengo",
+        "about": "Lorem Ipsum",
+        "github": "https://github.com/OwenMG",
+        "portfolio": "loremipsum.com"
+    },
+    {
+        "name": "Tiffany Dempsey",
+        "about": "Lorem Ipsum",
+        "github": "https://github.com/Tiffany7809",
+        "portfolio": "loremipsum.com"
+    }
+]
