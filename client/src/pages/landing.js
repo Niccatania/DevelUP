@@ -12,7 +12,7 @@ import {
   Spacer,
   Heading,
   Avatar,
-  Divider
+  Divider,
 } from "@chakra-ui/react";
 
 import Login from "./login";
@@ -22,20 +22,24 @@ import Navbar from "../components/NavBar";
 
 const Landing = () => {
   return (
-  
-    <div>
+    <box>
+      {/* make this part of the navbar? */}
       <box>
-        {" "}
-        <Button colorScheme="blue" to="/login">
+        {/* if logged out show login/signup */}
+        <Button colorScheme="blue" to="/login" m="1%">
           Login/Signup
         </Button>
-        
+        {/* if logged in show profile btn */}
+        <Button colorScheme="blue" to="/profile" m="1%">
+          My Profile
+        </Button>
       </box>
 
       <Center>
         {/* < Navbar /> */}
         <Heading> Fantastic Happiness!</Heading>
       </Center>
+
       <Divider orientation='horizontal' />
       <div>
       <Center>
