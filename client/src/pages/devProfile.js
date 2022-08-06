@@ -9,6 +9,7 @@ import {
 import { SimpleGrid } from '@chakra-ui/react' 
 const DevProfile = (props) => {
     return(
+    
     <div>
       <SimpleGrid minChildWidth='120px' spacing='40px'>
 {/* Here we use a map to render our devProfile with prop data provided in DevData */}
