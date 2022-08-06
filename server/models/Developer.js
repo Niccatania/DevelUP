@@ -13,12 +13,6 @@ const developerSchema = new Schema(
             type: String,
             required: true
         },
-        services: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Service'
-            }
-        ],
         github: {
             type: String
         },

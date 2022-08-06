@@ -16,6 +16,12 @@ const projectSchema = new Schema(
             required: true,
             match: [/^(pending)|(in progress)|(complete)$/, 'Must be pending, in progress, or complete']
         },
+        services: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Service'
+            }
+        ],
         dateCreated: {
             type: Date,
             default: Date.now,

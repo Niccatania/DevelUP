@@ -5,14 +5,16 @@ const typeDefs = gql`
     type User {
         _id: ID
         username: String
-        password: String
         email: String
+        password: String
         projects: [Project]
     }
 
     type Service {
+        _id: ID
         description: String
         price: Float
+        developer: Developer
     }
 
     type Developer {
@@ -20,7 +22,6 @@ const typeDefs = gql`
         name: String
         image: String
         about: String
-        services: [Service]
     }
 
     type Project {
@@ -28,7 +29,12 @@ const typeDefs = gql`
         title: String
         description: String
         status: String
+        services: [Service]
         dateCreated: String
+    }
+
+    type Checkout {
+        session: ID
     }
 
     type Auth {
@@ -45,6 +51,7 @@ const typeDefs = gql`
         allServices: [Service]
         project: Project
         allProjects: [Project]
+        checkout(products: [ID]!): Checkout
     }
 
     type Mutation {
