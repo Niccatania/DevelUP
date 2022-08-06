@@ -22,6 +22,7 @@ const typeDefs = gql`
         name: String
         image: String
         about: String
+        projects: [Project]
     }
 
     type Project {
@@ -31,6 +32,7 @@ const typeDefs = gql`
         status: String
         services: [Service]
         dateCreated: String
+        services: [Service]
     }
 
     type Checkout {
@@ -57,6 +59,8 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String! password: String!): Auth
+        addProject(title: String! description: String! userid: String serviceIds: [String]): Project
+        addService(description: String! price: Float! devId: String): Service
     }
 `;
 module.exports = typeDefs;

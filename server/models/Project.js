@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+const Service = require('./Service');
 
 const projectSchema = new Schema(
     {
@@ -14,6 +15,7 @@ const projectSchema = new Schema(
         status: {
             type: String,
             required: true,
+            default: "pending",
             match: [/^(pending)|(in progress)|(complete)$/, 'Must be pending, in progress, or complete']
         },
         services: [
@@ -26,7 +28,8 @@ const projectSchema = new Schema(
             type: Date,
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
-        }
+        },
+        services: [Service.schema]
     }
 );
 

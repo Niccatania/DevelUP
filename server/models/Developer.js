@@ -1,4 +1,6 @@
 const { Schema, model } = require('mongoose');
+const Project = require('./Project');
+
 
 const developerSchema = new Schema(
     {
@@ -19,12 +21,6 @@ const developerSchema = new Schema(
         portfolio: {
             type: String
         },
-        projects: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Project'
-            }
-        ]
     },
     {
         toJSON: {
@@ -34,9 +30,9 @@ const developerSchema = new Schema(
 );
 
 // add projectCount field
-developerSchema.virtual('projectCount').get(function () {
-    return this.projects.length;
-});
+// developerSchema.virtual('projectCount').get(function () {
+//     return this.projects.length;
+// });
 
 const Developer = model('Developer', developerSchema);
 
