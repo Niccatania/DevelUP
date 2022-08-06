@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Project, Developer } = require('../models');
+const { User, Project, Developer, Service } = require('../models');
 const { signToken } = require('../utils/auth');
 // const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -8,6 +8,15 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        allUsers: async (parent, args, context) => {
+            return await User.find().populate('projects');
+        },
+        allDevelopers: async (parent, args, context) => {
+            return await Developer.find().populate('services');
+        },
+        allProjects: async (parent, args, context) => {
+            return await Project.find();
+        },
         user: async (parent, args, context) => {
             if (context.user) {
                 const user = await User.findById(context.user._id).populate({
@@ -21,6 +30,9 @@ const resolvers = {
 
             throw new AuthenticationError('Not logged in');
         },
+        allUsers: async (parent, args, context) => {
+            return await User.find().populate('projects');
+        }
     },
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
