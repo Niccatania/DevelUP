@@ -40,7 +40,7 @@ const developerSchema = new Schema(
 );
 
 // add projectCount field
-userSchema.virtual('projectCount').get(function () {
+developerSchema.virtual('projectCount').get(function () {
     return this.projects.length;
 });
 
