@@ -15,7 +15,15 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "@apollo/client": "^3.3.7",
+<<<<<<< HEAD
     "react-router-dom": "^6.2.1"
+=======
+    "react-router-dom": "^6.2.1",
+    "@chakra-ui/react": "^2.2.4",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "framer-motion": "^6.5.1"
+>>>>>>> 8ab7758a (profile and checkout page)
   },
   "scripts": {
     "start": "react-scripts start",

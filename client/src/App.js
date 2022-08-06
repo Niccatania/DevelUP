@@ -1,5 +1,6 @@
 import "./App.css";
 
+<<<<<<< HEAD
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import {
@@ -11,6 +12,19 @@ import "./App.css";
 
 import Landing from "./pages/landing";
 import Login from "./pages/services";
+=======
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+
+import Landing from "./pages/landing";
+import Login from "./pages/servicesPage";
+>>>>>>> 8ab7758a (profile and checkout page)
 import NavBar from "./components/NavBar";
 
 import { ChakraProvider } from "@chakra-ui/react";
