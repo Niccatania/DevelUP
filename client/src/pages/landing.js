@@ -22,7 +22,7 @@ import Navbar from "../components/NavBar";
 
 const Landing = () => {
   return (
-    <box>
+    <div>
       {/* make this part of the navbar? */}
       <box>
         {/* if logged out show login/signup */}
