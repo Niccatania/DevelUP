@@ -33,10 +33,11 @@ const profile = () => {
         </Avatar>
       </Center>
       <Center>
-        <Heading>Your Projects</Heading>
-        <Divider></Divider>
+        <Heading mb ="2rem">Your Projects</Heading>
       </Center>
-      <TableContainer>
+      <Divider></Divider>
+      <Center>
+      <TableContainer w="80%">
         <Table variant="simple">
           {/* Link button to Services Page */}
           <TableCaption>
@@ -93,6 +94,7 @@ const profile = () => {
           </Tbody>
         </Table>
       </TableContainer>
+      </Center>
     </div>
   );
 };

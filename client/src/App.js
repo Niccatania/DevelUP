@@ -27,11 +27,10 @@ import Landing from "./pages/landing";
 import Login from "./pages/servicesPage";
 
 // import Login from "./pages/services";
-
-import NavBar from "./components/NavBar";
-// import Cart from "./components/Cart";
+// import NavBar from "./components/NavBar";
 import Profile from "./pages/profile";
 // import DevProfile from "./devProfile";
+// import Checkout from "./pages/checkout";
 
 import { ChakraProvider } from "@chakra-ui/react";
 
