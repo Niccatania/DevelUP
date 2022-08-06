@@ -1,5 +1,10 @@
 import React from "react";
 
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../utils/queries';
+
+import { Link } from 'react-router-dom';
+
 import {
   Container,
   Button,
@@ -23,7 +28,15 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 
-const profile = () => {
+
+function profile() {
+    const { data } = useQuery(QUERY_USER);
+    let user;
+  
+    if (data) {
+      user = data.user;
+    }
+
   return (
     <div>
       <Center>

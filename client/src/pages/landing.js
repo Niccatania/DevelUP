@@ -24,7 +24,7 @@ const Landing = () => {
   return (
     <div>
       {/* make this part of the navbar? */}
-      <box>
+      <Box>
         {/* if logged out show login/signup */}
         <Button colorScheme="blue" to="/login" m="1%">
           Login/Signup
@@ -33,7 +33,7 @@ const Landing = () => {
         <Button colorScheme="blue" to="/profile" m="1%">
           My Profile
         </Button>
-      </box>
+      </Box>
 
       <Center>
         {/* < Navbar /> */}
