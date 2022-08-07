@@ -21,18 +21,22 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  useRadio,
 } from "@chakra-ui/react";
 
-import Cart from "../components/Cart"
+import Cart from "../components/cart"
+import { useDeprecatedAnimatedState } from "framer-motion";
 
 
 
-const Checkout = () => {
+const Checkout = (props) => {
     return (
-        <div className="container">
+        <div>
+            <Avatar>{props.userData.username} </Avatar>
+            <Divider></Divider>
             <Cart />
         </div>
     );
 }
 
-export default Checkout 
+export default Checkout; 

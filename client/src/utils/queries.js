@@ -3,19 +3,29 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
   {
     user {
-      firstName
-      lastName
-      orders {
+      username
+      projects {
         _id
-        purchaseDate
-        products {
+        services {
           _id
           name
           description
           price
-          quantity
-          image
         }
+      }
+    }
+  }
+`;
+export const QUERY_ALL_SERVICES= gql`
+  {
+    services {
+      _id
+      name
+      description
+      price
+      developer {
+        _id
+        name
       }
     }
   }

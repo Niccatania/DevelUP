@@ -1,7 +1,4 @@
-// import "./App.css";
-import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import React from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,30 +6,26 @@ import {
   createHttpLink,
 } from "@apollo/client";
 
-import Landing from "./pages/landing";
-import Login from "./pages/services";
-import { setContext } from '@apollo/client/link/context';
+import { setContext } from "@apollo/client/link/context";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   createHttpLink,
-// } from "@apollo/client";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link as RouteLink,
+} from "react-router-dom";
 
 import Landing from "./pages/landing";
 
-import Login from "./pages/servicesPage";
-
-// import Login from "./pages/services";
+import Login from "./pages/login";
 import NavBar from "./components/NavBar";
 import Profile from "./pages/profile";
-// import DevProfile from "./devProfile";
-// import Checkout from "./pages/checkout";
+import DevProfile from "./pages/devProfile";
+import Checkout from "./pages/checkout";
 
 import { ChakraProvider } from "@chakra-ui/react";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -56,29 +49,24 @@ const client = new ApolloClient({
 function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
-    <ChakraProvider>
-      <ApolloProvider client={client}>
+
+    <ApolloProvider client={client}>
         <Router>
-          <div>
+          <>
             <NavBar />
             <Routes>
               <Route path="/" element={<Landing />} />
-              {/* <Route 
-                path="/login" 
-                element={<Login />} 
-              /> */}
+              <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/devProfile/:devId" element={<devProfile />} />
+              <Route path="/devProfile/:devId" element={<DevProfile />} />
+              <Route path="/profile/cart/checkout" element={<Checkout />} />
             </Routes>
-          </div>
+          </>
         </Router>
-      </ApolloProvider>
-    </ChakraProvider>
+    </ApolloProvider>
 
     // <div>
-    //   <ChakraProvider>
-    //     <Profile />
-    //   </ChakraProvider>
+    //     <Landing />
     // </div>
   );
 }
