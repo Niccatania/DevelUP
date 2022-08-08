@@ -30,8 +30,8 @@ const typeDefs = gql`
         title: String
         description: String
         status: String
-        services: [Service]
         dateCreated: String
+        services: [Service]
     }
 
     type Checkout {
@@ -46,11 +46,11 @@ const typeDefs = gql`
     type Query {
         user: User
         allUsers: [User]
-        developer: Developer
+        developer(_id: ID!): Developer
         allDevelopers: [Developer]
-        service: Service
+        service(_id: ID!): Service
         allServices: [Service]
-        project: Project
+        project(_id: ID!): Project
         allProjects: [Project]
         checkout(products: [ID]!): Checkout
     }

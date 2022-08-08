@@ -19,12 +19,12 @@ const projectSchema = new Schema(
             default: "pending",
             match: [/^(pending)|(in progress)|(complete)$/, 'Must be pending, in progress, or complete']
         },
-        services: [Service.schema],
         dateCreated: {
             type: Date,
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
-        }
+        },
+        services: [Service.schema],
     },
     {
         toJSON: {

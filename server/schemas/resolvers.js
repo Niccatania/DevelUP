@@ -8,18 +8,6 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
-        allUsers: async (parent, args, context) => {
-            return await User.find().populate('projects');
-        },
-        allDevelopers: async (parent, args, context) => {
-            return await Developer.find();
-        },
-        allProjects: async (parent, args, context) => {
-            return await Project.find();
-        },
-        allServices: async (parent, args, context) => {
-            return await Service.find().populate('developer');
-        },
         user: async (parent, args, context) => {
             if (context.user) {
                 const user = await User.findById(context.user._id).populate({
@@ -33,10 +21,31 @@ const resolvers = {
 
             throw new AuthenticationError('Not logged in');
         },
+        allUsers: async (parent, args, context) => {
+            return await User.find().populate('projects');
+        },
+        allDevelopers: async (parent, args, context) => {
+            return await Developer.find();
+        },
+        developer: async (parent, { _id }) => {
+            return await Developer.findById(_id);
+        },
+        allProjects: async (parent, args, context) => {
+            return await Project.find();
+        },
+        project: async (parent, { _id }) => {
+            return await Project.findById(_id);
+        },
+        allServices: async (parent, args, context) => {
+            return await Service.find().populate('developer');
+        },
+        service: async (parent, { _id }) => {
+            return await Service.findById(_id).populate('developer');
+        },
         checkout: async (parent, args, context) => {
             const url = new URL(context.headers.referer).origin;
             const project = new Project({ services: args.services });
-            const line_services = [];
+            const line_items = [];
 
             const { services } = await project.populate('services');
 
