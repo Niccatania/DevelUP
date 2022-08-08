@@ -32,7 +32,6 @@ const typeDefs = gql`
         status: String
         services: [Service]
         dateCreated: String
-        services: [Service]
     }
 
     type Checkout {
