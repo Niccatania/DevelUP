@@ -13,7 +13,7 @@ import {
   Switch,
   Route,
   Routes,
-  Link as RouteLink,
+  Link
 } from "react-router-dom";
 
 import Landing from "./pages/landing";
@@ -46,24 +46,70 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
 
-    <ApolloProvider client={client}>
-        <Router>
-          <>
-            <NavBar />
-            <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/devProfile/:devId" element={<DevProfile />} />
-              <Route path="/profile/cart/checkout" element={<Checkout />} />
-            </Routes>
-          </>
-        </Router>
-    </ApolloProvider>
+    // <ApolloProvider client={client}>
+    //     <Router>
+    //       <>
+    //         <NavBar />
+    //         <Routes>
+    //           <Route path="/" element={<Landing />} />
+    //           <Route path="login" element={<Login />} />
+    //           <Route path="profile" element={<Profile />} />
+    //           <Route path="devProfile/:devId" element={<DevProfile />} />
+    //           <Route path="profile/cart/checkout" element={<Checkout />} />
+    //         </Routes>
+    //       </>
+    //     </Router>
+    // </ApolloProvider>
+
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to ="/">Landing</Link>
+            </li>
+            <li>
+              <Link to ="/profile">My Profile</Link>
+            </li>
+            <li>
+              <Link to = "/devProfile/:devId">Developer Profile</Link>
+            </li>
+            <li>
+              <Link to ="/profile/checkout">Checkout</Link>
+            </li>
+            <li>
+              <Link to = "/services">Services</Link>
+            </li>
+            <li>
+              <Link to ="/profile/newProject">New Project</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path ="/">
+            <Landing />
+          </Route>
+          <Route path = "/profile">
+            <Profile />
+          </Route>
+          <Route path ="/devProfile/:devId">
+            <DevProfile />
+          </Route>
+          {/* <Route path = "/services">
+            <Services />
+          </Route> */}
+          {/* <Route path to ="/profile/newProject">
+            <NewProject />
+          </Route> */}
+        </Switch>
+      </div>
+    </Router>
+
 
     // <div>
     //     <Landing />
@@ -71,4 +117,8 @@ function App() {
   );
 }
 
-export default App;
+// function Landing(){
+//   return <h2>HomePage</h2>
+// }
+// export default App;
+ 
