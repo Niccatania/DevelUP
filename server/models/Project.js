@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+
 const Service = require('./Service');
 
 const projectSchema = new Schema(
@@ -23,9 +24,18 @@ const projectSchema = new Schema(
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
         },
-        services: [Service.schema]
+        services: [Service.schema],
+    },
+    {
+        toJSON: {
+            virtuals: true
+        }
     }
 );
+
+projectSchema.virtual('totalPrice').get(function() {
+    return this.services.reduce((total, service) => total + service.price, 0);
+});
 
 const Project = model('Project', projectSchema);
 

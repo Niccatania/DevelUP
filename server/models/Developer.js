@@ -22,11 +22,11 @@ const developerSchema = new Schema(
             type: String
         },
     },
-    {
+    /* {
         toJSON: {
             virtuals: true
         }
-    }
+    } */
 );
 
 // add projectCount field
