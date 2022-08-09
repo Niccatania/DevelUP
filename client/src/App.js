@@ -8,21 +8,14 @@ import {
 
 import { setContext } from "@apollo/client/link/context";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
+import { Router, Route, Routes, Link } from "react-router-dom";
 
 import Landing from "./pages/Landing";
-
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import NavBar from "./components/NavBar";
-import Profile from "./pages/profile";
-import DevProfile from "./pages/devProfile";
-import Checkout from "./pages/checkout";
+import Profile from "./pages/Profile";
+import DevProfile from "./pages/DevProfile";
+import Checkout from "./pages/Checkout";
 
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -48,78 +41,67 @@ const client = new ApolloClient({
 export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
+    // <div>
+    //   <ChakraProvider>
+    //     <ApolloProvider client={client}>
+    //       <Router>
+    //         <div>
+    //           {/* <NavBar /> */}
+    //           {/* Move this to NavBar */}
+    //           <nav>
+    //             <ul>
+    //               <li>
+    //                 <Link to="/">Landing</Link>
+    //               </li>
+    //               <li>
+    //                 <Link to="/login">Login</Link>
+    //               </li>
+    //               <li>
+    //                 <Link to="/profile">My Profile</Link>
+    //               </li>
+    //               <li>
+    //                 <Link to="/devProfile/:devId">Developer Profile</Link>
+    //               </li>
+    //               <li>
+    //                 <Link to="/profile/checkout">Checkout</Link>
+    //               </li>
+    //               <li>
+    //                 <Link to="/services">Services</Link>
+    //               </li>
+    //               <li>
+    //                 <Link to="/profile/newProject">New Project</Link>
+    //               </li>
+    //             </ul>
+    //           </nav>
 
-    // <ApolloProvider client={client}>
-    //     <Router>
-    //       <>
-    //         <NavBar />
-    //         <Routes>
-    //           <Route path="/" element={<Landing />} />
-    //           <Route path="login" element={<Login />} />
-    //           <Route path="profile" element={<Profile />} />
-    //           <Route path="devProfile/:devId" element={<DevProfile />} />
-    //           <Route path="profile/cart/checkout" element={<Checkout />} />
-    //         </Routes>
-    //       </>
-    //     </Router>
-    // </ApolloProvider>
-    <ChakraProvider>
-      <ApolloProvider client={client}>
-        <Router>
-          <div>
-            {/* Move this to NavBar */}
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Landing</Link>
-                </li>
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-                <li>
-                  <Link to="/profile">My Profile</Link>
-                </li>
-                <li>
-                  <Link to="/devProfile/:devId">Developer Profile</Link>
-                </li>
-                <li>
-                  <Link to="/profile/checkout">Checkout</Link>
-                </li>
-                <li>
-                  <Link to="/services">Services</Link>
-                </li>
-                <li>
-                  <Link to="/profile/newProject">New Project</Link>
-                </li>
-              </ul>
-            </nav>
+    //           <Routes>
+    //             <Route path="/" element={<Landing />} />
 
-            <Routes>
-              <Route path="/" element={<Landing />} />
+    //             <Route path="/login" element={<Login />} />
 
-              <Route path="/login" element={<Login />} />
+    //             <Route path="/profile" element={<Profile />} />
 
-              <Route path="/profile" element={<Profile />} />
+    //             <Route path="/devProfile/:devId" element={<DevProfile />} />
 
-              <Route path="/devProfile/:devId" element={<DevProfile />} />
+    //             <Route path="/profile/checkout" element={<Checkout />} />
 
-              <Route path="/profile/checkout" element={<Checkout />} />
+    //             {/* <Route path = "/services">
+    //         <Services />
+    //       </Route> */}
+    //             {/* <Route path to ="/profile/newProject">
+    //         <NewProject />
+    //       </Route> */}
+    //           </Routes>
+    //         </div>
+    //       </Router>
+    //     </ApolloProvider>
+    //   </ChakraProvider>
+    // </div>
 
-              {/* <Route path = "/services">
-            <Services />
-          </Route> */}
-              {/* <Route path to ="/profile/newProject">
-            <NewProject />
-          </Route> */}
-            </Routes>
-          </div>
-        </Router>
-      </ApolloProvider>
-    </ChakraProvider>
+    <div>
+      <ChakraProvider>
+        <Profile />
+      </ChakraProvider>
+    </div>
   );
 }
-
-// function Landing(){
-//   return <h2>HomePage</h2>
-// }
-// export default App;

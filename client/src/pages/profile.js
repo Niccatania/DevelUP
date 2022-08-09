@@ -10,15 +10,9 @@ import {
   Button,
   ButtonGroup,
   Center,
-  Square,
-  Circle,
-  Box,
-  Flex,
-  Spacer,
   Heading,
   Avatar,
   Divider,
-  Table,
   Thead,
   Tbody,
   Tr,
@@ -26,22 +20,45 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  Spacer,
+  SimpleGrid,
+  Box
 } from "@chakra-ui/react";
 
-function Profile() {
-  const { data } = useQuery(QUERY_USER);
-  let user;
+const Profile =(props) => {
+//   return (
+//     <div>
+//   <SimpleGrid minChildWidth="120px" spacing="40px">
+//      {props.projectData.map((proj) => {
+//           return (
+//             <div key={proj.id}>
+//               <Box bg="gray.400" w="200px" h="200px">
+//                 <center>
+//                   <h1>{proj.name}</h1>
+//                 </center>
+//               </Box>
+              
+//               <Spacer />
+//             </div>
+//           );
+//         })}
+//   </SimpleGrid>
+//   </div>
+//   )
+// };
+  // const { data } = useQuery(QUERY_USER);
+  // let user;
 
-  if (data) {
-    user = data.user;
-  }
+  // if (data) {
+  //   user = data.user;
+  // }
 
   return (
     <div>
       <Center>
         <Avatar w="10rem" h="10rem" p="2%" m="3%">
           {" "}
-          ${user.Username}
+          {/* {user.Username} */}
         </Avatar>
       </Center>
       <Center>
