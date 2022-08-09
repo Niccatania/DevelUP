@@ -14,8 +14,9 @@ const devCard = (props) => {
       {props.devData.map((dev) => {
         return (
           <div key={dev.id}>
-            <Box   color="aliceblue" bg="#06A77D" w="200px" h="300px" border= 'px'>
-                    <Box bg="005377" w="200px" h="px">
+            <Box bg="#9DCBBA" w="300px" h="400px">
+            <Box   color="aliceblue" bg="06A77D" w="300px" h="00px" border= 'px'>
+                    <Box bg="#005377" w="300px" h="300px">
                       <center>
                         <h1>{dev.name}</h1>
                         <img
@@ -28,6 +29,7 @@ const devCard = (props) => {
                           View Profile
                         </Button>
                       </center>
+                    </Box>
                     </Box>
                     </Box>
                     <Spacer />            

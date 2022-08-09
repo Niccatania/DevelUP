@@ -22,11 +22,15 @@ justify-content: space-between;
 }
 .listClass{
   display: inline;
-  padding: 0.25rem;
+  padding: 0.5rem;
   margin: 0;
   list-style: none;
- gap: 3rem;
+ gap: 4rem;
   color: aliceblue;
     display: flex;
   flex-direction: row;
+}
+.loginBtn{
+  align-items: flex-end;
+  justify-content: flex-end;
 }

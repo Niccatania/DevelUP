@@ -24,7 +24,7 @@ import DevProfile from "./devProfile";
 const Landing = () => {
   return (
     <div>
-        < Navbar />
+       
     <Center>
        <Heading> Fantastic Happiness!</Heading>
      </Center>
