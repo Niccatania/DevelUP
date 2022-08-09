@@ -69,7 +69,7 @@ export default function App() {
               </Button>
               <Button>
                 {" "}
-                <Link to="/Checkout">Checkout</Link>
+                <Link to="/checkout">Checkout</Link>
               </Button>
               <Button>
                 <Link to="/services">Services</Link>

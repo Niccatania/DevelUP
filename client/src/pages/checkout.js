@@ -1,5 +1,5 @@
 import React from "react";
-
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import {
   Container,
   Button,
@@ -33,7 +33,9 @@ const Checkout = (props) => {
       <Avatar>{props.userData.username} </Avatar>
       <Divider></Divider>
       <Cart />
-      <Button link to="/checkout/create-checkout-session">Checkout</Button>
+      <Link to="/checkout/create-checkout-session">
+      <Button>Checkout</Button>
+      </Link>
     </div>
   );
 };
