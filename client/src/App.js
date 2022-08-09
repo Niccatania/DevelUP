@@ -1,35 +1,23 @@
 import "./App.css";
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
-
 import Landing from "./pages/landing";
-import Login from "./pages/services";
+import Login from "./pages/login";
 import NavBar from "./components/NavBar";
-
 import { ChakraProvider } from "@chakra-ui/react";
-
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
-
-// const client = new ApolloClient({
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache(),
-// });
+import {Route, Routes} from "react-router-dom";
+import DevProfile from "./pages/devProfile";
 
 function App() {
   return (
-    //Wrap application in chakra provider at root(TIffany)
     <div>
       <ChakraProvider>
-        <Landing />
+        <NavBar />
+        <div className="container">
+<Routes>
+  <Route path="/" element={<Landing />} />
+  <Route path="/Login" element={<Login />} />
+  <Route path="/DevProfile" element={<DevProfile />} />
+</Routes>
+        </div>
       </ChakraProvider>
     </div>
   );
