@@ -7,6 +7,14 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
+import {
+  Flex,
+  Box,
+  Spacer,
+  ButtonGroup,
+  Button,
+  Center,
+} from "@chakra-ui/react";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
@@ -17,8 +25,8 @@ import Profile from "./pages/profile";
 import DevProfile from "./pages/devProfile";
 import Checkout from "./pages/checkout";
 import Services from "./pages/services";
-import NewSite from "./components/newSite"
-import RefactorSite from "./components/refactorSite"
+import NewSite from "./components/newSite";
+import RefactorSite from "./components/refactorSite";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,28 +52,31 @@ export default function App() {
     // Wrap application in chakra provider at root(TIffany)
     <ApolloProvider client={client}>
       <Router>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Landing</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/profile">My Profile</Link>
-            </li>
-            <li>
-              <Link to="/devProfile/:devId">Developer Profile</Link>
-            </li>
-            <li>
-              <Link to="/Checkout">Checkout</Link>
-            </li>
-            <li>
-              <Link to="/services">Services</Link>
-            </li>
-          </ul>
-        </nav>
+        <Center>
+          <nav>
+            <ButtonGroup>
+              <Button>
+                <Link to="/">Landing</Link>
+              </Button>
+              <Button>
+                <Link to="/login">Login</Link>
+              </Button>{" "}
+              <Button>
+                <Link to="/profile">My Profile</Link>
+              </Button>
+              <Button>
+                <Link to="/devProfile/:devId">Developer Profile</Link>
+              </Button>
+              <Button>
+                {" "}
+                <Link to="/Checkout">Checkout</Link>
+              </Button>
+              <Button>
+                <Link to="/services">Services</Link>
+              </Button>
+            </ButtonGroup>
+          </nav>
+        </Center>
 
         <Routes>
           <Route path="/" element={<Landing />} />

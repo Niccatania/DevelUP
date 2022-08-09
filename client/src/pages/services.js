@@ -1,28 +1,27 @@
 import React from "react";
 import {BrowserRouter as Router, Link} from 'react-router-dom';
-import { Container, Button, Center, Heading, Spacer } from "@chakra-ui/react";
+import { Container, Button, Center, Heading, Spacer,Box, Divider } from "@chakra-ui/react";
 
 const Services = () => {
   return (
     <div>
-      <Container>
+      <Box>
         <Center>
-          <Heading pb="3%">Select a Service:</Heading>
+          <Heading mt="10%"pb="3%">Select a Service:</Heading>
         </Center>
         <Center>
           <Link to="/services/newsite">
-            <Button m="3%" colorScheme="teal">
+            <Button colorScheme="teal">
               Create a Site From Scratch
             </Button>
           </Link>
-          <Spacer />
           <Link to="/services/refactorsite">
-          <Button m="3%" colorScheme="teal">
+          <Button colorScheme="teal">
             Refactor an Existing Site
           </Button>
           </Link>
         </Center>
-      </Container>
+      </Box>
     </div>
   );
 };

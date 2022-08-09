@@ -1,4 +1,5 @@
 import React from "react";
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import {
   FormControl,
   FormLabel,
@@ -7,7 +8,9 @@ import {
   FormHelperText,
   Center,
   Heading,
-  Box
+  Box,
+  Button,
+  ButtonGroup
 } from "@chakra-ui/react";
 const newSite = () => {
   return (
@@ -38,6 +41,12 @@ const newSite = () => {
           <FormHelperText color ="white">We'll never share your email.</FormHelperText>
         </FormControl>
       </Center>
+      <Center>
+        <ButtonGroup>
+            <Button  mb ="4%">Submit</Button>
+            <Link to ="/services"><Button  mb ="4%">Go Back</Button></Link>
+        </ButtonGroup>
+        </Center>
     </Box>
   );
 };
