@@ -23,21 +23,23 @@ const Navbar = () => {
         <div>
             <nav className="navBar">
             <ul className="listClass">
-                <li>
+                <li className="ind">
                 <Link to="/" >
                 Home</Link>
                 </li>
-                <li>
+                <li className="ind">
                 <Link to="/Login" >
                 Login</Link>
                 </li>
-                <li>
+                <li className="ind">
                 <Link to="/DevProfile" >
                 Developer Profile</Link>
                 </li>
-                <li>Client
+                <li className="ind">Client Profile
                 </li>
-                <li>Contact us</li>
+                <li className="ind" >Start a project</li>
+                <li className="ind">Cart</li>
+                <li className="ind">Contact us</li>
                 </ul>
                 
                 <Box>
