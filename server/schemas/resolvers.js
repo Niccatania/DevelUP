@@ -31,10 +31,18 @@ const resolvers = {
             return await Developer.findById(_id);
         },
         allProjects: async (parent, args, context) => {
-            return await Project.find();
+            return await Project.find().populate('services');
         },
         project: async (parent, { _id }) => {
-            return await Project.findById(_id);
+            const project = await Project.findById(_id).populate({
+                path : 'services',
+                populate : {
+                  path : 'developer'
+                }
+              })
+            console.log(project.services.developer);
+            console.log(project.totalPrice);
+            return project;
         },
         allServices: async (parent, args, context) => {
             return await Service.find().populate('developer');
