@@ -16,8 +16,9 @@ import NavBar from "./components/NavBar";
 import Profile from "./pages/profile";
 import DevProfile from "./pages/devProfile";
 import Checkout from "./pages/checkout";
-
-import { ChakraProvider } from "@chakra-ui/react";
+import Services from "./pages/services";
+import NewSite from "./components/newSite"
+import RefactorSite from "./components/refactorSite"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -41,47 +42,49 @@ const client = new ApolloClient({
 export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
-      <ApolloProvider client={client}>
-        <Router>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Landing</Link>
-                </li>
-                <li>
-                  <Link to="/Login">Login</Link>
-                </li>
-                <li>
-                  <Link to="/Profile">My Profile</Link>
-                </li>
-                <li>
-                  <Link to="/devProfile/:devId">Developer Profile</Link>
-                </li>
-                <li>
-                  <Link to="/Profile/Checkout">Checkout</Link>
-                </li>
-                <li>
-                  <Link to="/services">Services</Link>
-                </li>
-                <li>
-                  <Link to="/profile/newProject">New Project</Link>
-                </li>
-              </ul>
-            </nav>
+    <ApolloProvider client={client}>
+      <Router>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Landing</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/profile">My Profile</Link>
+            </li>
+            <li>
+              <Link to="/devProfile/:devId">Developer Profile</Link>
+            </li>
+            <li>
+              <Link to="/Checkout">Checkout</Link>
+            </li>
+            <li>
+              <Link to="/services">Services</Link>
+            </li>
+          </ul>
+        </nav>
 
-            <Routes>
-              <Route path="/" element={<Landing />} />
+        <Routes>
+          <Route path="/" element={<Landing />} />
 
-              <Route path="/Login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
 
-              <Route path="/Profile" element={<Profile />} />
+          <Route path="/services" element={<Services />} />
 
-              <Route path="/devProfile/:devId" element={<DevProfile />} />
+          <Route path="/services/newsite" element={<NewSite />} />
 
-              <Route path="/Profile/checkout" element={<Checkout />} />
+          <Route path="/services/refactorsite" element={<RefactorSite />} />
 
-            </Routes>
-        </Router>
-      </ApolloProvider>
+          <Route path="/profile" element={<Profile />} />
+
+          <Route path="/devProfile/:devId" element={<DevProfile />} />
+
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </Router>
+    </ApolloProvider>
   );
 }
