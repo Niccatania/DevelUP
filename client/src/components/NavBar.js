@@ -27,21 +27,25 @@ const Navbar = () => {
                 <Link to="/" >
                 Home</Link>
                 </li>
-                
-                
-               
                 <li>
                 <Link to="/Login" >
                 Login</Link>
                 </li>
-                
-                <li>Team</li>
-                <li>client</li>
+                <li>
+                <Link to="/DevProfile" >
+                Developer Profile</Link>
+                </li>
+                <li>Client
+                </li>
+                <li>Contact us</li>
                 </ul>
+                
                 <Box>
        {" "}
-       <Button className="loginBtn" colorScheme="blue" to="/Login">
+       <Button className="loginBtn" colorScheme="blue">
+        <Link to="/Login" >
          Login/Signup
+         </Link>
        </Button>
     
      </Box>

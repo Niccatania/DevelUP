@@ -13,8 +13,8 @@ const DevProfile = (props) => {
     return(
     
     <div>
-      <SimpleGrid minChildWidth='120px' spacing='40px'>
-{/* Here we use a map to render our devProfile with prop data provided in DevData */}
+      <h1>THis is DEV PROFILE!!!1</h1>
+      {/* <SimpleGrid minChildWidth='120px' spacing='40px'>
       {props.devData.map((dev) => {
         return (
           <div key={dev.id}>
@@ -31,7 +31,7 @@ const DevProfile = (props) => {
           </div>    
         );
       })}
-         </SimpleGrid>
+         </SimpleGrid> */}
 </div>
   );
 };
