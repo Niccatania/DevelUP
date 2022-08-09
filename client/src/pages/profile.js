@@ -26,32 +26,6 @@ import {
 } from "@chakra-ui/react";
 
 const Profile =(props) => {
-//   return (
-//     <div>
-//   <SimpleGrid minChildWidth="120px" spacing="40px">
-//      {props.projectData.map((proj) => {
-//           return (
-//             <div key={proj.id}>
-//               <Box bg="gray.400" w="200px" h="200px">
-//                 <center>
-//                   <h1>{proj.name}</h1>
-//                 </center>
-//               </Box>
-              
-//               <Spacer />
-//             </div>
-//           );
-//         })}
-//   </SimpleGrid>
-//   </div>
-//   )
-// };
-  // const { data } = useQuery(QUERY_USER);
-  // let user;
-
-  // if (data) {
-  //   user = data.user;
-  // }
 
   return (
     <div>

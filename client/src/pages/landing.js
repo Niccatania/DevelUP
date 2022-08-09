@@ -15,7 +15,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
-import Login from "./Login";
+import Login from "./login";
 import DevCard from "../components/devCard";
 import DevData from "../components/devData"
 import Navbar from "../components/NavBar";

@@ -8,14 +8,14 @@ import {
 
 import { setContext } from "@apollo/client/link/context";
 
-import { Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-import Landing from "./pages/Landing";
-import Login from "./pages/Login";
+import Landing from "./pages/landing";
+import Login from "./pages/login";
 import NavBar from "./components/NavBar";
-import Profile from "./pages/Profile";
-import DevProfile from "./pages/DevProfile";
-import Checkout from "./pages/Checkout";
+import Profile from "./pages/profile";
+import DevProfile from "./pages/devProfile";
+import Checkout from "./pages/checkout";
 
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -41,67 +41,47 @@ const client = new ApolloClient({
 export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
-    // <div>
-    //   <ChakraProvider>
-    //     <ApolloProvider client={client}>
-    //       <Router>
-    //         <div>
-    //           {/* <NavBar /> */}
-    //           {/* Move this to NavBar */}
-    //           <nav>
-    //             <ul>
-    //               <li>
-    //                 <Link to="/">Landing</Link>
-    //               </li>
-    //               <li>
-    //                 <Link to="/login">Login</Link>
-    //               </li>
-    //               <li>
-    //                 <Link to="/profile">My Profile</Link>
-    //               </li>
-    //               <li>
-    //                 <Link to="/devProfile/:devId">Developer Profile</Link>
-    //               </li>
-    //               <li>
-    //                 <Link to="/profile/checkout">Checkout</Link>
-    //               </li>
-    //               <li>
-    //                 <Link to="/services">Services</Link>
-    //               </li>
-    //               <li>
-    //                 <Link to="/profile/newProject">New Project</Link>
-    //               </li>
-    //             </ul>
-    //           </nav>
+      <ApolloProvider client={client}>
+        <Router>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Landing</Link>
+                </li>
+                <li>
+                  <Link to="/Login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/Profile">My Profile</Link>
+                </li>
+                <li>
+                  <Link to="/devProfile/:devId">Developer Profile</Link>
+                </li>
+                <li>
+                  <Link to="/Profile/Checkout">Checkout</Link>
+                </li>
+                <li>
+                  <Link to="/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/profile/newProject">New Project</Link>
+                </li>
+              </ul>
+            </nav>
 
-    //           <Routes>
-    //             <Route path="/" element={<Landing />} />
+            <Routes>
+              <Route path="/" element={<Landing />} />
 
-    //             <Route path="/login" element={<Login />} />
+              <Route path="/Login" element={<Login />} />
 
-    //             <Route path="/profile" element={<Profile />} />
+              <Route path="/Profile" element={<Profile />} />
 
-    //             <Route path="/devProfile/:devId" element={<DevProfile />} />
+              <Route path="/devProfile/:devId" element={<DevProfile />} />
 
-    //             <Route path="/profile/checkout" element={<Checkout />} />
+              <Route path="/Profile/checkout" element={<Checkout />} />
 
-    //             {/* <Route path = "/services">
-    //         <Services />
-    //       </Route> */}
-    //             {/* <Route path to ="/profile/newProject">
-    //         <NewProject />
-    //       </Route> */}
-    //           </Routes>
-    //         </div>
-    //       </Router>
-    //     </ApolloProvider>
-    //   </ChakraProvider>
-    // </div>
-
-    <div>
-      <ChakraProvider>
-        <Profile />
-      </ChakraProvider>
-    </div>
+            </Routes>
+        </Router>
+      </ApolloProvider>
   );
 }
