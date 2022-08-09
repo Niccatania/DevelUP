@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navBar{
+  background-color: #052f5f;
+  display: flex;
+justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin: 0;
+}
+.listClass{
+  display: inline;
+  padding: 0.25rem;
+  margin: 0;
+  list-style: none;
+ gap: 3rem;
+  color: aliceblue;
+    display: flex;
+  flex-direction: row;
+}

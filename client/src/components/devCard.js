@@ -14,10 +14,13 @@ const devCard = (props) => {
       {props.devData.map((dev) => {
         return (
           <div key={dev.id}>
-                    <Box bg="gray.400" w="200px" h="200px">
+            <Box   color="aliceblue" bg="#06A77D" w="200px" h="300px" border= 'px'>
+                    <Box bg="005377" w="200px" h="px">
                       <center>
                         <h1>{dev.name}</h1>
                         <img
+                         borderRadius='full'
+                         boxSize='10px'
                           alt="Developer profile"
                           src={`${process.env.PUBLIC_URL}${dev.image}`}
                         />
@@ -25,6 +28,7 @@ const devCard = (props) => {
                           View Profile
                         </Button>
                       </center>
+                    </Box>
                     </Box>
                     <Spacer />            
           </div>    

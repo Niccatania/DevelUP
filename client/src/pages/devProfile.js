@@ -4,6 +4,8 @@ import {
   Heading,
   Input,
   Button,
+  Box, 
+  Spacer
  
 } from '@chakra-ui/react';
 import { SimpleGrid } from '@chakra-ui/react' 
