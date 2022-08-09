@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import {
   Container,
   Button,
@@ -13,30 +13,31 @@ import {
   Heading,
   Avatar,
   Divider,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
-  useRadio,
 } from "@chakra-ui/react";
 
 import Cart from "../components/cart";
-import { useDeprecatedAnimatedState } from "framer-motion";
 
-const Checkout = (props) => {
+const Checkout = () => {
   return (
-    <div>
-      <Avatar>{props.userData.username} </Avatar>
-      <Divider></Divider>
-      <Cart />
-      <Link to="/checkout/create-checkout-session">
-      <Button>Checkout</Button>
-      </Link>
-    </div>
+    <Center>
+      <Box>
+       <Box>
+        <Heading pt="5%">Your Cart:</Heading>
+        </Box>
+      
+        <Box>
+          <Avatar>Username </Avatar>
+        </Box>
+        <Center>
+          <Container>
+            <Cart />
+          </Container>
+        </Center>
+        <Link to="/checkout/create-checkout-session">
+          <Button>Checkout</Button>
+        </Link>
+      </Box>
+    </Center>
   );
 };
 

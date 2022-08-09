@@ -3,15 +3,43 @@ import {
   Button,
   Box,
   Spacer,
-  Avatar
+  Divider,
+  Avatar,
+  Thead,
+  Table,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Flex,
+  TableCaption,
+  TableContainer,
+  Container,
+  Center,
 } from "@chakra-ui/react";
+import { blacken } from "@chakra-ui/theme-tools";
+import { Tab } from "bootstrap";
 
-const Cart = (props) => {
-    return (
-        <>
-            <Avatar>{props.userData.username}</Avatar>
-        </>
-    )
-}
+const cart = () => {
+  return (
+    
+      <Container>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        </Container>
+    
+   
+  );
+};
 
-export default Cart;
+export default cart;

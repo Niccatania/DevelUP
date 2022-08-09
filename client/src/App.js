@@ -28,6 +28,7 @@ import Services from "./pages/services";
 import NewSite from "./components/newSite";
 import RefactorSite from "./components/refactorSite";
 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -68,7 +69,6 @@ export default function App() {
                 <Link to="/devProfile/:devId">Developer Profile</Link>
               </Button>
               <Button>
-                {" "}
                 <Link to="/checkout">Checkout</Link>
               </Button>
               <Button>
@@ -94,6 +94,8 @@ export default function App() {
           <Route path="/devProfile/:devId" element={<DevProfile />} />
 
           <Route path="/checkout" element={<Checkout />} />
+
+
         </Routes>
       </Router>
     </ApolloProvider>
