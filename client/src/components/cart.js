@@ -5,24 +5,15 @@ import {
   Spacer,
   Divider,
   Avatar,
-  Thead,
-  Table,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  Flex,
-  TableCaption,
-  TableContainer,
-  Container,
-  Center,
+  Container
+
 } from "@chakra-ui/react";
-import { blacken } from "@chakra-ui/theme-tools";
-import { Tab } from "bootstrap";
+
+
 
 const cart = () => {
   return (
-    
+
       <Container>
         <Box bg="gray.100">
           <p>Cart Item</p>
@@ -37,9 +28,9 @@ const cart = () => {
           <p>Cart Item</p>
         </Box>
         </Container>
-    
-   
+
   );
+  
 };
 
 export default cart;

@@ -27,7 +27,7 @@ import Checkout from "./pages/checkout";
 import Services from "./pages/services";
 import NewSite from "./components/newSite";
 import RefactorSite from "./components/refactorSite";
-
+import CustomRequest from "./components/customRequest"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -88,6 +88,8 @@ export default function App() {
           <Route path="/services/newsite" element={<NewSite />} />
 
           <Route path="/services/refactorsite" element={<RefactorSite />} />
+
+          <Route path="/services/customrequest" element={<CustomRequest />} />
 
           <Route path="/profile" element={<Profile />} />
 
