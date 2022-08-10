@@ -41,11 +41,22 @@ const devCard = (props) => {
 
                          
                         <Link to="/DevProfile" >
-                        <Button colorScheme="blue" to="/devProfile/user">
+                        <Button colorScheme="blue"  to="/devProfile/user">
                           View Profile
                         </Button>
                         </Link>
-
+                        {/* <ul>
+                          <li>
+                            mad good website maker
+                          </li>
+<p>Super good skills</p>
+<li>
+                            best sites ever
+                          </li>
+</ul> */}
+{/* <Button colorScheme="green" m={"9rem"} to="/devProfile/user">
+                          Hire me!
+                        </Button> */}
                       </center>
   
                     </Box>
