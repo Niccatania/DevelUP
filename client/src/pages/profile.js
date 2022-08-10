@@ -1,50 +1,34 @@
 import React from "react";
-
-import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
-
-import { Link } from "react-router-dom";
-
 import {
-  Container,
   Button,
-  ButtonGroup,
   Center,
   Heading,
   Avatar,
   Divider,
   Thead,
+  Table,
   Tbody,
   Tr,
   Th,
   Td,
   TableCaption,
   TableContainer,
-  Spacer,
-  SimpleGrid,
-  Box
 } from "@chakra-ui/react";
 
-const Profile =(props) => {
-
+const Profile = () => {
   return (
     <div>
       <Center>
-        <Avatar w="10rem" h="10rem" p="2%" m="3%">
-          {" "}
-          {/* {user.Username} */}
-        </Avatar>
+        <Avatar w="10rem" h="10rem" p="2%" m="3%"></Avatar>
       </Center>
       <Center>
         <Heading mb="2rem">Your Projects</Heading>
       </Center>
       <Divider></Divider>
       <Center>
-        <TableContainer w="80%">
-          <TableContainer variant="simple">
-            {/* Link button to Services Page */}
+        <TableContainer>
+          <Table varient ='striped' colorScheme='teal'>
             <TableCaption>
-              {" "}
               <Button>Start New Project</Button>
             </TableCaption>
             <Thead>
@@ -64,42 +48,16 @@ const Profile =(props) => {
                 <Td isNumeric>$400.00</Td>
                 <Td>Not Paid</Td>
                 <Td>Tiffany, Supriya, Nic, Owen </Td>
-                {/* link to Cart */}
                 <Td>
-                  {" "}
-                  <Button>Make Payment</Button>
-                </Td>
-              </Tr>
-              <Tr>
-                <Td>Site Title</Td>
-                <Td>Complete/ In progress</Td>
-                <Td isNumeric>$400.00</Td>
-                <Td> Paid </Td>
-                <Td>Tiffany, Supriya, Nic, Owen </Td>
-                {/* link to Cart */}
-                <Td>
-                  {" "}
-                  <Button>Make Payment</Button>
-                </Td>
-              </Tr>
-              <Tr>
-                <Td>Site Title</Td>
-                <Td>Complete/ In progress</Td>
-                <Td isNumeric>$800.00</Td>
-                <Td> Not Paid</Td>
-                <Td>Tiffany, Supriya, Nic, Owen </Td>
-                {/* link to Cart */}
-                <Td>
-                  {" "}
                   <Button>Make Payment</Button>
                 </Td>
               </Tr>
             </Tbody>
-          </TableContainer>
+          </Table>
         </TableContainer>
       </Center>
     </div>
   );
-}
+};
 
 export default Profile;
