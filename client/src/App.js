@@ -51,55 +51,51 @@ const client = new ApolloClient({
 export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
-    <ApolloProvider client={client}>
-      <Router>
-        <Center>
-          <nav>
-            <ButtonGroup>
-              <Button>
-                <Link to="/">Landing</Link>
-              </Button>
-              <Button>
-                <Link to="/login">Login</Link>
-              </Button>{" "}
-              <Button>
-                <Link to="/profile">My Profile</Link>
-              </Button>
-              <Button>
-                <Link to="/devProfile/:devId">Developer Profile</Link>
-              </Button>
-              <Button>
-                <Link to="/checkout">Checkout</Link>
-              </Button>
-              <Button>
-                <Link to="/services">Services</Link>
-              </Button>
-            </ButtonGroup>
-          </nav>
-        </Center>
+      <ApolloProvider client={client}>
+      
+        <Router>
+        
+         <NavBar />
+           {/* <nav>
+              <ul>
+                <li>
+                  <Link to="/">Landing</Link>
+                </li>
+                <li> 
+                  <Link to="/Login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/Profile">My Profile</Link>
+                </li>
+                <li>
+                  <Link to="/devProfile/:devId">Developer Profile</Link>
+                </li>
+                <li>
+                  <Link to="/Profile/Checkout">Checkout</Link>
+                </li>
+                <li>
+                  <Link to="/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/profile/newProject">New Project</Link>
+                </li>
+              </ul>
+            </nav> */}
 
-        <Routes>
-          <Route path="/" element={<Landing />} />
+            <Routes>
+              <Route path="/" element={<Landing />} />
 
-          <Route path="/login" element={<Login />} />
+              <Route path="/Login" element={<Login />} />
 
-          <Route path="/services" element={<Services />} />
+              <Route path="/Profile" element={<Profile />} />
 
-          <Route path="/services/newsite" element={<NewSite />} />
+              <Route path="/devProfile/:devId" element={<DevProfile />} />
 
-          <Route path="/services/refactorsite" element={<RefactorSite />} />
+              <Route path="/Profile/checkout" element={<Checkout />} />
 
-          <Route path="/services/customrequest" element={<CustomRequest />} />
-
-          <Route path="/profile" element={<Profile />} />
-
-          <Route path="/devProfile/:devId" element={<DevProfile />} />
-
-          <Route path="/checkout" element={<Checkout />} />
-
-
-        </Routes>
-      </Router>
-    </ApolloProvider>
+            </Routes>
+        </Router>
+     
+      </ApolloProvider>
   );
 }
