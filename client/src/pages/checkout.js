@@ -1,44 +1,48 @@
-import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import {
-  Container,
-  Button,
-  ButtonGroup,
-  Center,
-  Square,
-  Circle,
-  Box,
-  Flex,
-  Spacer,
-  Heading,
-  Avatar,
-  Divider,
-} from "@chakra-ui/react";
 
-import Cart from "../components/cart";
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
-const Checkout = () => {
+import CheckoutForm from "../components/checkoutForm";
+
+
+// Make sure to call loadStripe outside of a component’s render to avoid
+// recreating the Stripe object on every render.
+// This is a public sample test API key.
+// Don’t submit any personally identifiable information in requests made with this key.
+// Sign in to see your own test API key embedded in code samples.
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+
+export default function Checkout () {
+  const [clientSecret, setClientSecret] = useState("");
+
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
+
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
   return (
-    <Center>
-      <Box>
-       <Box>
-        <Heading pt="5%">Your Cart:</Heading>
-        </Box>
-      
-        <Box>
-          <Avatar>Username </Avatar>
-        </Box>
-        <Center>
-          <Container>
-            <Cart />
-          </Container>
-        </Center>
-        <Link to="/checkout/create-checkout-session">
-          <Button>Checkout</Button>
-        </Link>
-      </Box>
-    </Center>
+    <div>
+      <h1>Username</h1>
+      {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm />
+        </Elements>
+      )}
+    </div>
   );
-};
-
-export default Checkout;
+}

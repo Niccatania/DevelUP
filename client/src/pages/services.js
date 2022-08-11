@@ -1,6 +1,6 @@
 import React from "react";
-import {BrowserRouter as Router, Link} from 'react-router-dom';
-import { Container, Button, Center, Heading, Spacer,Box, Divider, ButtonGroup } from "@chakra-ui/react";
+import {Link} from 'react-router-dom';
+import {  Button, Center, Heading,Box, ButtonGroup } from "@chakra-ui/react";
 
 const Services = () => {
   return (

@@ -6,11 +6,9 @@ import {
   createHttpLink,
 } from "@apollo/client";
 
+
 import { setContext } from "@apollo/client/link/context";
 import {
-  Flex,
-  Box,
-  Spacer,
   ButtonGroup,
   Button,
   Center,
@@ -49,6 +47,7 @@ const client = new ApolloClient({
 });
 
 export default function App() {
+
   return (
     // Wrap application in chakra provider at root(TIffany)
     <ApolloProvider client={client}>
