@@ -20,9 +20,9 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import Landing from "./pages/landing";
 import Login from "./pages/login";
-import NavBar from "./components/NavBar";
-import Profile from "./pages/profile";
+import NavBar from "./components/NavBar"
 import DevProfile from "./pages/devProfile";
+import ClientProfile from "./pages/clientProfile";
 import Checkout from "./pages/checkout";
 import Services from "./pages/services";
 import NewSite from "./components/newSite";
@@ -56,38 +56,14 @@ export default function App() {
         <Router>
         
          <NavBar />
-           {/* <nav>
-              <ul>
-                <li>
-                  <Link to="/">Landing</Link>
-                </li>
-                <li> 
-                  <Link to="/Login">Login</Link>
-                </li>
-                <li>
-                  <Link to="/Profile">My Profile</Link>
-                </li>
-                <li>
-                  <Link to="/devProfile/:devId">Developer Profile</Link>
-                </li>
-                <li>
-                  <Link to="/Profile/Checkout">Checkout</Link>
-                </li>
-                <li>
-                  <Link to="/services">Services</Link>
-                </li>
-                <li>
-                  <Link to="/profile/newProject">New Project</Link>
-                </li>
-              </ul>
-            </nav> */}
-
-            <Routes>
+                    <Routes>
               <Route path="/" element={<Landing />} />
 
-              <Route path="/Login" element={<Login />} />
+              <Route path="/DevProfile" element={<DevProfile />} />
+              <Route path="/ClientProfile" element={<ClientProfile />} />
+              <Route path="/Services" element={<Services />} />
 
-              <Route path="/Profile" element={<Profile />} />
+              <Route path="/Login" element={<Login />} />
 
               <Route path="/devProfile/:devId" element={<DevProfile />} />
 

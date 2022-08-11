@@ -13,7 +13,8 @@ import {
   Heading,
   Avatar,
   Divider,
-  Text
+  Text,
+  SimpleGrid
 } from "@chakra-ui/react";
 
 import Login from "./login";
@@ -39,7 +40,7 @@ DevelUp
      <Divider  orientation='horizontal' />
      <div >
       {/* <Profile /> */}
-      <Box m={"10rem"}>
+      <Box m={"9rem"}>
         <Text 
         color='#10575e'
          fontSize='4xl'
@@ -59,9 +60,13 @@ DevelUp
 </Text>
      </Center>
      </div>
+     
     <div>
+      
      < DevData />
+    
     </div>
+   
    </div>
   
  );
