@@ -13,7 +13,7 @@ const serviceSchema = new Schema(
         developer: {
             type: Schema.Types.ObjectId,
             ref: 'Developer'
-        }
+          }
     }
 );
 
