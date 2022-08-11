@@ -40,7 +40,7 @@ DevelUp
      <Divider  orientation='horizontal' />
      <div >
       {/* <Profile /> */}
-      <Box m={"10rem"}>
+      <Box m={"9rem"}>
         <Text 
         color='#10575e'
          fontSize='4xl'

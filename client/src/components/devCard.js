@@ -54,10 +54,14 @@ const devCard = (props) => {
                               name="Developer"
                               src={`${process.env.PUBLIC_URL}${dev.image}`}
                             />
-
+                            <Box bg="#4EA679"
+                            w="300px"
+                            h="160px">
                             <ul>
+                              
                               <a href={dev.portfolio}>
                                 <Button
+                                size="lg"
                                   m="1rem"
                                   colorScheme="blue"
                                   to="/devProfile/"
@@ -65,18 +69,38 @@ const devCard = (props) => {
                                   Portfolio
                                 </Button>
                               </a>
+                             
+                              
                               <a href={dev.github}>
-                                <h1 className="cardClasstwo">Github</h1>
+                              <Button
+                              size="lg"
+                                  m="1rem"
+                                  colorScheme="blue"
+                                  to="/github/"
+                                >
+                                 github
+                                </Button>
                               </a>
+                             
+                              {/* <li>
                               <a href={dev.linkedin}>
-                                <p className="cardClasstwo">linkedin</p>
+                              <Button
+                              size="lg"
+                                  m="1rem"
+                                  colorScheme="blue"
+                                  to="/github/"
+                                >
+                               linkedin
+                                </Button>
                               </a>
+                              </li> */}
                             </ul>
                             <Link to="/Services">
-                              <Button size="lg" m="3rem" colorScheme="purple">
+                              <Button size="lg" m="1.2rem" colorScheme="purple">
                                 Hire me!
                               </Button>
                             </Link>
+                            </Box>
                           </center>
                         </Box>
                       </Box>
