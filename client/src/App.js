@@ -50,6 +50,7 @@ export default function App() {
 
   return (
     // Wrap application in chakra provider at root(TIffany)
+<<<<<<< HEAD
     <ApolloProvider client={client}>
       <Router>
         <Center>
@@ -76,6 +77,38 @@ export default function App() {
             </ButtonGroup>
           </nav>
         </Center>
+=======
+      <ApolloProvider client={client}>
+      
+        <Router>
+        
+         <NavBar />
+           {/* <nav>
+              <ul>
+                <li>
+                  <Link to="/">Landing</Link>
+                </li>
+                <li> 
+                  <Link to="/Login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/Profile">My Profile</Link>
+                </li>
+                <li>
+                  <Link to="/devProfile/:devId">Developer Profile</Link>
+                </li>
+                <li>
+                  <Link to="/Profile/Checkout">Checkout</Link>
+                </li>
+                <li>
+                  <Link to="/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/profile/newProject">New Project</Link>
+                </li>
+              </ul>
+            </nav> */}
+>>>>>>> c058c5fd (Client-branch clone for nic to edit)
 
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -88,6 +121,7 @@ export default function App() {
 
           <Route path="/services/refactorsite" element={<RefactorSite />} />
 
+<<<<<<< HEAD
           <Route path="/services/customrequest" element={<CustomRequest />} />
 
           <Route path="/profile" element={<Profile />} />
@@ -100,5 +134,11 @@ export default function App() {
         </Routes>
       </Router>
     </ApolloProvider>
+=======
+            </Routes>
+        </Router>
+     
+      </ApolloProvider>
+>>>>>>> c058c5fd (Client-branch clone for nic to edit)
   );
 }
