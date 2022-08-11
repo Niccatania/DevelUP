@@ -35,11 +35,15 @@ const Navbar = () => {
                 <Link to="/DevProfile" >
                 Developer Profile</Link>
                 </li>
-                <li className="ind">Client Profile
+
+                <li className="ind">
+                <Link to="/ClientProfile">
+                    Client Profile</Link>
                 </li>
-                <li className="ind" >Start a project</li>
+                
+                {/* <li className="ind" >Start a project</li>
                 <li className="ind">Cart</li>
-                <li className="ind">Contact us</li>
+                <li className="ind">Contact us</li> */}
                 </ul>
                 
                 <Box>
