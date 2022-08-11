@@ -7,6 +7,14 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
+import {
+  Flex,
+  Box,
+  Spacer,
+  ButtonGroup,
+  Button,
+  Center,
+} from "@chakra-ui/react";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
@@ -16,8 +24,10 @@ import NavBar from "./components/NavBar";
 import Profile from "./pages/profile";
 import DevProfile from "./pages/devProfile";
 import Checkout from "./pages/checkout";
-
-import { ChakraProvider } from "@chakra-ui/react";
+import Services from "./pages/services";
+import NewSite from "./components/newSite";
+import RefactorSite from "./components/refactorSite";
+import CustomRequest from "./components/customRequest"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
