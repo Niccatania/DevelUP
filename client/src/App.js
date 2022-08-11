@@ -42,13 +42,16 @@ export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
       <ApolloProvider client={client}>
+      
         <Router>
-            <nav>
+        
+         <NavBar />
+           {/* <nav>
               <ul>
                 <li>
                   <Link to="/">Landing</Link>
                 </li>
-                <li>
+                <li> 
                   <Link to="/Login">Login</Link>
                 </li>
                 <li>
@@ -67,7 +70,7 @@ export default function App() {
                   <Link to="/profile/newProject">New Project</Link>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
 
             <Routes>
               <Route path="/" element={<Landing />} />
@@ -82,6 +85,7 @@ export default function App() {
 
             </Routes>
         </Router>
+     
       </ApolloProvider>
   );
 }
