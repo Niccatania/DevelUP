@@ -3,15 +3,34 @@ import {
   Button,
   Box,
   Spacer,
-  Avatar
+  Divider,
+  Avatar,
+  Container
+
 } from "@chakra-ui/react";
 
-const Cart = (props) => {
-    return (
-        <>
-            <Avatar>{props.userData.username}</Avatar>
-        </>
-    )
-}
 
-export default Cart;
+
+const cart = () => {
+  return (
+
+      <Container>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        <Box bg="gray.100">
+          <p>Cart Item</p>
+        </Box>
+        </Container>
+
+  );
+  
+};
+
+export default cart;

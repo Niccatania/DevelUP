@@ -7,6 +7,14 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
+import {
+  Flex,
+  Box,
+  Spacer,
+  ButtonGroup,
+  Button,
+  Center,
+} from "@chakra-ui/react";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
@@ -16,8 +24,10 @@ import NavBar from "./components/NavBar";
 import Profile from "./pages/profile";
 import DevProfile from "./pages/devProfile";
 import Checkout from "./pages/checkout";
-
-import { ChakraProvider } from "@chakra-ui/react";
+import Services from "./pages/services";
+import NewSite from "./components/newSite";
+import RefactorSite from "./components/refactorSite";
+import CustomRequest from "./components/customRequest"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,13 +52,16 @@ export default function App() {
   return (
     // Wrap application in chakra provider at root(TIffany)
       <ApolloProvider client={client}>
+      
         <Router>
-            <nav>
+        
+         <NavBar />
+           {/* <nav>
               <ul>
                 <li>
                   <Link to="/">Landing</Link>
                 </li>
-                <li>
+                <li> 
                   <Link to="/Login">Login</Link>
                 </li>
                 <li>
@@ -67,7 +80,7 @@ export default function App() {
                   <Link to="/profile/newProject">New Project</Link>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
 
             <Routes>
               <Route path="/" element={<Landing />} />
@@ -82,6 +95,7 @@ export default function App() {
 
             </Routes>
         </Router>
+     
       </ApolloProvider>
   );
 }
