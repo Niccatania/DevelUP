@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+
 ////////////Stripe///////////////////////
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
@@ -56,6 +57,7 @@ app.post("/create-payment-intent", async (req, res) => {
 });
 
 /////////////////////////////////
+
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
