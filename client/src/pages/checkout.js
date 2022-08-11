@@ -1,10 +1,9 @@
-
+import { Box } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "../components/checkoutForm";
-
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
@@ -13,7 +12,7 @@ import CheckoutForm from "../components/checkoutForm";
 // Sign in to see your own test API key embedded in code samples.
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
-export default function Checkout () {
+export default function Checkout() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -28,7 +27,7 @@ export default function Checkout () {
   }, []);
 
   const appearance = {
-    theme: 'stripe',
+    theme: "stripe",
   };
   const options = {
     clientSecret,
@@ -38,11 +37,13 @@ export default function Checkout () {
   return (
     <div>
       <h1>Username</h1>
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )}
+      <Box>
+        {clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        )}
+      </Box>
     </div>
   );
 }
