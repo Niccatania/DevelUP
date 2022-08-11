@@ -13,7 +13,8 @@ import {
   Heading,
   Avatar,
   Divider,
-  Text
+  Text,
+  SimpleGrid
 } from "@chakra-ui/react";
 
 import Login from "./login";
@@ -59,9 +60,13 @@ DevelUp
 </Text>
      </Center>
      </div>
+     
     <div>
+      
      < DevData />
+    
     </div>
+   
    </div>
   
  );
