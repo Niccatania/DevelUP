@@ -4,7 +4,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "../components/checkoutForm";
-import Cart from "../components/cart";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
@@ -54,13 +53,14 @@ export default function Checkout() {
               <p>Cart Item</p>
             </Box>
           </Box>
-          <Box>
+
+          
             {clientSecret && (
               <Elements options={options} stripe={stripePromise}>
                 <CheckoutForm />
               </Elements>
             )}
-          </Box>
+        
         </Container>
       </Center>
     </div>
