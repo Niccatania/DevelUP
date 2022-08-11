@@ -6,6 +6,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 
 import {
+  Box,
   Container,
   Button,
   ButtonGroup,
@@ -13,93 +14,79 @@ import {
   Heading,
   Avatar,
   Divider,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
   TableContainer,
+  li,
+  liead,
+  Tbody,
   Spacer,
   SimpleGrid,
-  Box
 } from "@chakra-ui/react";
 
-const Profile =(props) => {
+const ClientProfile =(props) => {
 
   return (
     <div>
-      <Center>
-        <Avatar w="10rem" h="10rem" p="2%" m="3%">
+         <Avatar w="10rem" h="10rem" p="2%" m="3%">
           {" "}
-          {/* {user.Username} */}
         </Avatar>
-      </Center>
-      <Center>
-        <Heading mb="2rem">Your Projects</Heading>
-      </Center>
-      <Divider></Divider>
-      <Center>
-        <TableContainer w="80%">
-          <TableContainer variant="simple">
-            {/* Link button to Services Page */}
-            <TableCaption>
-              {" "}
-              <Button>Start New Project</Button>
-            </TableCaption>
-            <Thead>
-              <Tr>
-                <Th>Project Title</Th>
-                <Th>Status</Th>
-                <Th isNumeric>Cost</Th>
-                <Th> Paid Status</Th>
-                <Th>Developer(s)</Th>
-                <Th>Make Payment</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              <Tr>
-                <Td>Site Title</Td>
-                <Td>Complete/ In progress</Td>
-                <Td isNumeric>$400.00</Td>
-                <Td>Not Paid</Td>
-                <Td>Tiffany, Supriya, Nic, Owen </Td>
+        <Heading mb="2rem">Your Projects</Heading>  
+        
+               <Box border={"solid"}>
+                <ul>
+                <li>Project Title</li>
+                <li>Status</li>
+                <li isNumeric>Cost</li>
+                <li> Paid Status</li>
+                <li>Developer(s)</li>
+                <li>Make Payment</li>
+                </ul>
+              </Box>
+              <Box border={"solid"}>
+                <ul>
+                <li>Site Title</li>
+                <li>Complete/ In progress</li>
+                <li isNumeric>$400.00</li>
+                <li>Not Paid</li>
+                <li>Tiffany, Supriya, Nic, Owen </li>
                 {/* link to Cart */}
-                <Td>
+                <li>
                   {" "}
                   <Button>Make Payment</Button>
-                </Td>
-              </Tr>
-              <Tr>
-                <Td>Site Title</Td>
-                <Td>Complete/ In progress</Td>
-                <Td isNumeric>$400.00</Td>
-                <Td> Paid </Td>
-                <Td>Tiffany, Supriya, Nic, Owen </Td>
+                </li>
+                </ul>
+              </Box>
+              <Box>
+              <ul>
+                <li>Site Title</li>
+                <li>Complete/ In progress</li>
+                <li isNumeric>$400.00</li>
+                <li> Paid </li>
+                <li>Tiffany, Supriya, Nic, Owen </li>
                 {/* link to Cart */}
-                <Td>
+                <li>
                   {" "}
                   <Button>Make Payment</Button>
-                </Td>
-              </Tr>
-              <Tr>
-                <Td>Site Title</Td>
-                <Td>Complete/ In progress</Td>
-                <Td isNumeric>$800.00</Td>
-                <Td> Not Paid</Td>
-                <Td>Tiffany, Supriya, Nic, Owen </Td>
+                </li>
+                </ul>
+              </Box>
+              <Box>
+              <ul>
+                <li>Site Title</li>
+                <li>Complete/ In progress</li>
+                <li isNumeric>$800.00</li>
+                <li> Not Paid</li>
+                <li>Tiffany, Supriya, Nic, Owen </li>
                 {/* link to Cart */}
-                <Td>
+                <li>
                   {" "}
                   <Button>Make Payment</Button>
-                </Td>
-              </Tr>
-            </Tbody>
-          </TableContainer>
-        </TableContainer>
-      </Center>
-    </div>
+                </li>
+                </ul>
+              </Box>
+            
+        </div>
+   
   );
 }
 
-export default Profile;
+export default ClientProfile;

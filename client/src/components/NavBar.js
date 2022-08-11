@@ -31,22 +31,26 @@ const Navbar = () => {
                 <Link to="/Login" >
                 Login</Link>
                 </li>
-                <li className="ind">
+                {/* <li className="ind">
                 <Link to="/DevProfile" >
                 Developer Profile</Link>
-                </li>
+                </li> */}
 
                 <li className="ind">
                 <Link to="/ClientProfile">
                     Client Profile</Link>
                 </li>
                 
-                {/* <li className="ind" >Start a project</li>
+                <li className="ind" >
+                    <Link to="/Services">Start a project
+                    </Link>
+                    </li>
+                {/* 
                 <li className="ind">Cart</li>
                 <li className="ind">Contact us</li> */}
                 </ul>
                 
-                <Box>
+                {/* <Box>
        {" "}
        <Button className="loginBtn" colorScheme="blue">
         <Link to="/Login" >
@@ -55,7 +59,7 @@ const Navbar = () => {
        </Button>
     
      </Box>
-           
+            */}
          </nav> 
          </div>
        

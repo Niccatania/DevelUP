@@ -20,8 +20,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import Landing from "./pages/landing";
 import Login from "./pages/login";
-import NavBar from "./components/NavBar";
-import Profile from "./pages/profile";
+import NavBar from "./components/NavBar"
 import DevProfile from "./pages/devProfile";
 import ClientProfile from "./pages/clientProfile";
 import Checkout from "./pages/checkout";
@@ -62,10 +61,9 @@ export default function App() {
 
               <Route path="/DevProfile" element={<DevProfile />} />
               <Route path="/ClientProfile" element={<ClientProfile />} />
+              <Route path="/Services" element={<Services />} />
 
               <Route path="/Login" element={<Login />} />
-
-              <Route path="/Profile" element={<Profile />} />
 
               <Route path="/devProfile/:devId" element={<DevProfile />} />
 

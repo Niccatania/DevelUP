@@ -1,4 +1,5 @@
 import React from "react";
+import devData from "./devData";
 import {
   Button,
   Box,
@@ -8,6 +9,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  Flex
   
 
 } from "@chakra-ui/react";
@@ -23,10 +25,11 @@ const devCard = (props) => {
 {/* Here we use a map to render our devCards with prop data provided in DevData */}
       {props.devData.map((dev) => {
         return (
-          <div key={dev.id}>
-            <div className="cardClass">
-            <Box bg="#4EA699" w="300px" h="400px" borderRadius="25px">
-            <Box   color="aliceblue" bg="#7CFFC4" w="300px"  borderRadius="25px">
+          <div Flex>
+          <div Flex key={dev.devId}>
+            <div Flex className="cardClass">
+            <Box Flex bg="#4EA699" w="300px" h="400px" borderRadius="25px">
+            <Box Flex  color="aliceblue" bg="#7CFFC4" w="300px"  borderRadius="25px">
                     <Box bg="#4EA699" w="300px" h="300px" borderRadius="25px">
                       <center>
                         <h1>{dev.name}</h1>
@@ -35,16 +38,26 @@ const devCard = (props) => {
                          boxSize='10px'
                           alt="Developer profile"
                           src={`${process.env.PUBLIC_URL}${dev.image}`}
-                        /> */}
-                          
-    <Avatar size='2xl' name='Developer' src={`${process.env.PUBLIC_URL}${dev.image}`} />
-
-                         
-                        <Link to="/DevProfile" >
-                        <Button colorScheme="blue"  to="/devProfile/user">
-                          View Profile
+                        /> */}                        
+    <Avatar size='2xl' name='Developer' src={`${process.env.PUBLIC_URL}${dev.image}`} />                       
+ 
+                        
+                        <ul>
+                        <a href={dev.portfolio}>
+                        <Button colorScheme="blue"  to="/devProfile/">
+                          Portfolio
                         </Button>
-                        </Link>
+                        </a>
+                          <Link to="{dev.github}">
+                            <p>Github</p></Link>
+                          <a href={dev.portfolio}><p>portfolio</p> </a>
+                          <Link to="{dev.linkedin}"><p>linkedin</p></Link>
+
+                        </ul>
+                        <Button colorScheme="purple"  to="/devProfile/">
+                          Hire me!
+                        </Button>
+
                         {/* <ul>
                           <li>
                             mad good website maker
@@ -66,11 +79,13 @@ const devCard = (props) => {
                     <Spacer />  
 
           </div>    
+          </div>
         );
       })}
          </SimpleGrid>
          </Box>
 </div>
+
   );
 };
 export default devCard;
