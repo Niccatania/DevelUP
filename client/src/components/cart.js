@@ -34,9 +34,7 @@ const cart = () => {
       <Box bg="gray.100">
         <p>Cart Item</p>
       </Box>
-      <Elements stripe={stripePromise} options={options}>
-        <CheckoutForm />
-      </Elements>
+     
     </Container>
   );
 };

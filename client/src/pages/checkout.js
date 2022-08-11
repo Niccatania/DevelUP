@@ -1,9 +1,10 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Center, Container } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "../components/checkoutForm";
+import Cart from "../components/cart";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
@@ -37,13 +38,31 @@ export default function Checkout() {
   return (
     <div>
       <h1>Username</h1>
-      <Box>
-        {clientSecret && (
-          <Elements options={options} stripe={stripePromise}>
-            <CheckoutForm />
-          </Elements>
-        )}
-      </Box>
+      <Center>
+        <Container>
+          <Box mb="20%">
+            <Box bg="gray.100">
+              <p>Cart Item</p>
+            </Box>
+            <Box bg="gray.100">
+              <p>Cart Item</p>
+            </Box>
+            <Box bg="gray.100">
+              <p>Cart Item</p>
+            </Box>
+            <Box bg="gray.100">
+              <p>Cart Item</p>
+            </Box>
+          </Box>
+          <Box>
+            {clientSecret && (
+              <Elements options={options} stripe={stripePromise}>
+                <CheckoutForm />
+              </Elements>
+            )}
+          </Box>
+        </Container>
+      </Center>
     </div>
   );
 }
