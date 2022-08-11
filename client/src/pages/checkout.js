@@ -1,41 +1,49 @@
-import React from "react";
+import { Box } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
-import {
-  Container,
-  Button,
-  ButtonGroup,
-  Center,
-  Square,
-  Circle,
-  Box,
-  Flex,
-  Spacer,
-  Heading,
-  Avatar,
-  Divider,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
-  useRadio,
-} from "@chakra-ui/react";
+import CheckoutForm from "../components/checkoutForm";
 
-import Cart from "../components/cart";
-import { useDeprecatedAnimatedState } from "framer-motion";
+// Make sure to call loadStripe outside of a component’s render to avoid
+// recreating the Stripe object on every render.
+// This is a public sample test API key.
+// Don’t submit any personally identifiable information in requests made with this key.
+// Sign in to see your own test API key embedded in code samples.
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
-const Checkout = (props) => {
+export default function Checkout() {
+  const [clientSecret, setClientSecret] = useState("");
+
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
+
+  const appearance = {
+    theme: "stripe",
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
   return (
     <div>
-      <Avatar>{props.userData.username} </Avatar>
-      <Divider></Divider>
-      <Cart />
-      <Button link to="/checkout/create-checkout-session">Checkout</Button>
+      <h1>Username</h1>
+      <Box>
+        {clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        )}
+      </Box>
     </div>
   );
-};
-
-export default Checkout;
+}

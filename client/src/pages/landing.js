@@ -23,18 +23,6 @@ import Navbar from "../components/NavBar";
 const Landing = () => {
   return (
     <div>
-      {/* make this part of the navbar? */}
-      <Box>
-        {/* if logged out show login/signup */}
-        <Button colorScheme="blue" to="/login" m="1%">
-          Login/Signup
-        </Button>
-        {/* if logged in show profile btn */}
-        <Button colorScheme="blue" to="/profile" m="1%">
-          My Profile
-        </Button>
-      </Box>
-
       <Center>
         {/* < Navbar /> */}
         <Heading> Fantastic Happiness!</Heading>

@@ -3,15 +3,42 @@ import {
   Button,
   Box,
   Spacer,
-  Avatar
+  Divider,
+  Avatar,
+  Container,
 } from "@chakra-ui/react";
+import CheckoutForm from "./checkoutForm";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
-const Cart = (props) => {
-    return (
-        <>
-            <Avatar>{props.userData.username}</Avatar>
-        </>
-    )
-}
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
-export default Cart;
+const cart = () => {
+  const options = {
+    // passing the client secret obtained from the server
+    clientSecret: "{{CLIENT_SECRET}}",
+  };
+  return (
+    <Container>
+      <Box bg="gray.100">
+        <p>Cart Item</p>
+      </Box>
+      <Box bg="gray.100">
+        <p>Cart Item</p>
+      </Box>
+      <Box bg="gray.100">
+        <p>Cart Item</p>
+      </Box>
+      <Box bg="gray.100">
+        <p>Cart Item</p>
+      </Box>
+      <Elements stripe={stripePromise} options={options}>
+        <CheckoutForm />
+      </Elements>
+    </Container>
+  );
+};
+
+export default cart;
