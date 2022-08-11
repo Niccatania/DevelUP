@@ -42,21 +42,24 @@ const devCard = (props) => {
     <Avatar size='2xl' name='Developer' src={`${process.env.PUBLIC_URL}${dev.image}`} />                       
  
                         
-                        <ul>
+                        <ul >
                         <a href={dev.portfolio}>
-                        <Button colorScheme="blue"  to="/devProfile/">
+                        <Button m="1rem" colorScheme="blue"  to="/devProfile/">
                           Portfolio
                         </Button>
                         </a>
-                          <Link to="{dev.github}">
-                            <p>Github</p></Link>
-                          <a href={dev.portfolio}><p>portfolio</p> </a>
-                          <Link to="{dev.linkedin}"><p>linkedin</p></Link>
+                         <a href={dev.github}>
+                            <h1 className="cardClasstwo">Github</h1></a>                    
+                          <a href={dev.linkedin}>
+                            <p className="cardClasstwo">linkedin</p></a>
 
                         </ul>
-                        <Button colorScheme="purple"  to="/devProfile/">
+                        <Link to="/Services">
+                        <Button size="lg" m="3rem" colorScheme="purple"  >
+
                           Hire me!
                         </Button>
+                        </Link>
 
                         {/* <ul>
                           <li>
@@ -77,6 +80,7 @@ const devCard = (props) => {
                     </Box>
                     </div>
                     <Spacer />  
+     
 
           </div>    
           </div>

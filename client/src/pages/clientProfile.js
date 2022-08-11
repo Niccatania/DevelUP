@@ -1,5 +1,4 @@
 import React from "react";
-
 // import { useQuery } from "@apollo/client";
 // import { QUERY_USER } from "../utils/queries";
 
@@ -26,9 +25,10 @@ const ClientProfile =(props) => {
 
   return (
     <div>
-         <Avatar w="10rem" h="10rem" p="2%" m="3%">
-          {" "}
+         <Avatar w="10rem" h="10rem"  m="3%"  src={`${process.env.PUBLIC_URL}${"/assets/pRudd.jpeg"}`}>
+          
         </Avatar>
+       
         <Heading mb="2rem">Your Projects</Heading>  
         
                <Box border={"solid"}>
@@ -47,20 +47,6 @@ const ClientProfile =(props) => {
                 <li>Complete/ In progress</li>
                 <li isNumeric>$400.00</li>
                 <li>Not Paid</li>
-                <li>Tiffany, Supriya, Nic, Owen </li>
-                {/* link to Cart */}
-                <li>
-                  {" "}
-                  <Button>Make Payment</Button>
-                </li>
-                </ul>
-              </Box>
-              <Box>
-              <ul>
-                <li>Site Title</li>
-                <li>Complete/ In progress</li>
-                <li isNumeric>$400.00</li>
-                <li> Paid </li>
                 <li>Tiffany, Supriya, Nic, Owen </li>
                 {/* link to Cart */}
                 <li>
