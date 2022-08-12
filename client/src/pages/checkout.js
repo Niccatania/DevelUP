@@ -40,27 +40,72 @@ export default function Checkout() {
 
       <Center>
         <Container>
-          <Box mb="20%">
-            <Box bg="gray.100">
-              <p>Cart Item</p>
+          <Box mb="10%" h="100%">
+            <Box
+              h="10%"
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>Service title</p>
+              <p>Description</p>
+              <p align="right">Cost</p>
             </Box>
-            <Box bg="gray.100">
-              <p>Cart Item</p>
+            <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>Service title</p>
+              <p>Description</p>
+              <p align="right">Cost</p>
             </Box>
-            <Box bg="gray.100">
-              <p>Cart Item</p>
+            <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>Service title</p>
+              <p>Description</p>
+              <p align="right">Cost</p>
             </Box>
-            <Box bg="gray.100">
-              <p>Cart Item</p>
+            <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>Service title</p>
+              <p>Description</p>
+              <p align="right">Cost</p>
             </Box>
           </Box>
+
+          <Box>
+            Total:
+            <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>add total here</p>
+            </Box>
+            
+          </Box>
+
+          {clientSecret && (
+            <Elements options={options} stripe={stripePromise}>
+              <CheckoutForm />
+            </Elements>
+          )}
+
         </Container>
       </Center>
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )}
+ 
     </div>
   );
 }
