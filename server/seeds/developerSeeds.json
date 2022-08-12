@@ -1,26 +1,26 @@
 [
     {
-        "name": "Supriya Sharma",
-        "image": "/assets/Supriya.jpeg",
-        "github": "https://github.com/supsha878",
-        "portfolio": "loremipsum.com"
+        "name": "Tiffany Dempsey",
+        "image": "/assets/Tiffany.jpeg",
+        "github": "https://github.com/Tiffany7809",
+        "portfolio": "https://tiffany7809.github.io/React_Portfolio/"
     },
     {
         "name": "Nic Catania",
         "image": "/assets/profile.jpeg",
         "github": "https://github.com/Niccatania",
-        "portfolio": "loremipsum.com"
+        "portfolio": "https://niccatania.github.io/Portfolioworld/"
     },
     {
         "name": "Owen Greengo",
         "image": "/assets/owen.jpeg",
         "github": "https://github.com/OwenMG",
-        "portfolio": "loremipsum.com"
+        "portfolio": "https://owenmg.github.io/ReactFolio/#portfolio"
     },
     {
-        "name": "Tiffany Dempsey",
-        "image": "/assets/Tiffany.jpeg",
-        "github": "https://github.com/Tiffany7809",
-        "portfolio": "loremipsum.com"
+        "name": "Supriya Sharma",
+        "image": "/assets/Supriya.jpeg",
+        "github": "https://github.com/supsha878",
+        "portfolio": "https://supsha878.github.io/react-portfolio/"
     }
 ]
