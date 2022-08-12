@@ -1,4 +1,4 @@
-import { Box, Center, Container } from "@chakra-ui/react";
+import { Box, Center, Container, Divider } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
@@ -12,7 +12,7 @@ import CheckoutForm from "../components/checkoutForm";
 // Sign in to see your own test API key embedded in code samples.
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
-export default function Checkout() {
+export default function Checkout(props) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -40,6 +40,7 @@ export default function Checkout() {
 
       <Center>
         <Container>
+
           <Box mb="10%" h="100%">
             <Box
               h="10%"
@@ -49,7 +50,21 @@ export default function Checkout() {
               bg="gray.100"
             >
               <p>Service title</p>
+              <Divider orientation="horizontal" />
               <p>Description</p>
+              <Divider orientation="horizontal" />
+              <p align="right" id ="newSiteId">Cost</p>
+            </Box>
+            <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>Service title</p>
+              <Divider orientation="horizontal" />
+              <p>Description</p>
+              <Divider orientation="horizontal" />
               <p align="right">Cost</p>
             </Box>
             <Box
@@ -59,7 +74,9 @@ export default function Checkout() {
               bg="gray.100"
             >
               <p>Service title</p>
+              <Divider orientation="horizontal" />
               <p>Description</p>
+              <Divider orientation="horizontal" />
               <p align="right">Cost</p>
             </Box>
             <Box
@@ -69,17 +86,9 @@ export default function Checkout() {
               bg="gray.100"
             >
               <p>Service title</p>
+              <Divider orientation="horizontal" />
               <p>Description</p>
-              <p align="right">Cost</p>
-            </Box>
-            <Box
-              borderColor="black"
-              borderWidth="1px"
-              borderStyle="groove"
-              bg="gray.100"
-            >
-              <p>Service title</p>
-              <p>Description</p>
+              <Divider orientation="horizontal" />
               <p align="right">Cost</p>
             </Box>
           </Box>
@@ -92,16 +101,37 @@ export default function Checkout() {
               borderStyle="groove"
               bg="gray.100"
             >
-              <p>add total here</p>
+              <p align="right">add total here</p>
             </Box>
-            
           </Box>
+        {/* {props.cartData.map((item) => { 
+            <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="gray.100"
+            >
+              <p>Service title</p>
+              <Divider orientation="horizontal" />
+              <p>Description</p>
+              <Divider orientation="horizontal" />
+              <p align="right">Cost</p>
+            </Box>
+            }; */}
 
+          <Box
+              borderColor="black"
+              borderWidth="1px"
+              borderStyle="groove"
+              bg="teal.500"
+              p="5%">
           {clientSecret && (
             <Elements options={options} stripe={stripePromise}>
               <CheckoutForm />
             </Elements>
           )}
+
+          </Box>
 
         </Container>
       </Center>
