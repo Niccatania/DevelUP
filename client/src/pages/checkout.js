@@ -37,6 +37,7 @@ export default function Checkout() {
   return (
     <div>
       <h1>Username</h1>
+
       <Center>
         <Container>
           <Box mb="20%">
@@ -53,16 +54,13 @@ export default function Checkout() {
               <p>Cart Item</p>
             </Box>
           </Box>
-
-          
-            {clientSecret && (
-              <Elements options={options} stripe={stripePromise}>
-                <CheckoutForm />
-              </Elements>
-            )}
-        
         </Container>
       </Center>
+      {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm />
+        </Elements>
+      )}
     </div>
   );
 }

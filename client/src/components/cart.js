@@ -34,7 +34,6 @@ const cart = () => {
       <Box bg="gray.100">
         <p>Cart Item</p>
       </Box>
-     
     </Container>
   );
 };
