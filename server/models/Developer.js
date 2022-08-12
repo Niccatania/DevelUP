@@ -11,10 +11,6 @@ const developerSchema = new Schema(
         image: {
             type: String
         },
-        about: {
-            type: String,
-            required: true
-        },
         github: {
             type: String
         },

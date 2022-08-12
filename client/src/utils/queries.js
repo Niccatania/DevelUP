@@ -3,7 +3,6 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
 	{
 		user {
-			username
 			email
 			projects {
 				_id
@@ -29,6 +28,18 @@ export const QUERY_ALL_SERVICES = gql`
 			description
 			price
 			developer
+		}
+	}
+`;
+
+export const QUERY_ALL_DEVS = gql`
+	{
+		allDevelopers {
+			_id
+			name
+			image
+			github
+			portfolio
 		}
 	}
 `;
