@@ -7,7 +7,7 @@ const Services = () => {
   <Center>
       <Box w="70%" h="80%" pb="10%" m="5%"bg ="gray.100">
         <Center>
-          <Heading mt="10%"pb="3%">Select a Service:</Heading>
+          <Heading color='#10575e' mt="10%"pb="3%">Select a Service:</Heading>
         </Center>
         <Center>
           <ButtonGroup>
