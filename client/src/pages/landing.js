@@ -16,12 +16,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import Login from "./login";
-import DevCard from "../components/devCard";
 import DevData from "../components/devData";
-import Navbar from "../components/NavBar";
-import DevProfile from "./devProfile";
-import Profile from "./clientProfile";
+
 const Landing = () => {
   return (
     <div>

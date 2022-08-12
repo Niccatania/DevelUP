@@ -34,7 +34,7 @@ const Navbar = () => {
           <li className="ind">Client Profile</li>
           <li className="ind"> <Link to = "/services" >Start a project</Link></li>
           <li className="ind">
-            <Link to="/Profile/checkout"> Cart </Link>
+            <Link to="/checkout"> Cart </Link>
           </li>
           <li className="ind">Contact us</li>
         </ul>

@@ -5,11 +5,7 @@ import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "../components/checkoutForm";
 
-// Make sure to call loadStripe outside of a component’s render to avoid
-// recreating the Stripe object on every render.
-// This is a public sample test API key.
-// Don’t submit any personally identifiable information in requests made with this key.
-// Sign in to see your own test API key embedded in code samples.
+
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 export default function Checkout(props) {
@@ -104,20 +100,6 @@ export default function Checkout(props) {
               <p align="right">add total here</p>
             </Box>
           </Box>
-        {/* {props.cartData.map((item) => { 
-            <Box
-              borderColor="black"
-              borderWidth="1px"
-              borderStyle="groove"
-              bg="gray.100"
-            >
-              <p>Service title</p>
-              <Divider orientation="horizontal" />
-              <p>Description</p>
-              <Divider orientation="horizontal" />
-              <p align="right">Cost</p>
-            </Box>
-            }; */}
 
           <Box
               borderColor="black"
