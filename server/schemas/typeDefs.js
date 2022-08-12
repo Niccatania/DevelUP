@@ -20,7 +20,8 @@ const typeDefs = gql`
         _id: ID
         name: String
         image: String
-        about: String
+        github: String
+        portfolio: String
         projects: [Project]
     }
 

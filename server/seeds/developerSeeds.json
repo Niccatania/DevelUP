@@ -1,25 +1,25 @@
 [
     {
         "name": "Supriya Sharma",
-        "about": "Lorem Ipsum",
+        "image": "/assets/Supriya.jpeg",
         "github": "https://github.com/supsha878",
         "portfolio": "loremipsum.com"
     },
     {
-        "name": "Nick Catania",
-        "about": "Lorem Ipsum",
+        "name": "Nic Catania",
+        "image": "/assets/profile.jpeg",
         "github": "https://github.com/Niccatania",
         "portfolio": "loremipsum.com"
     },
     {
         "name": "Owen Greengo",
-        "about": "Lorem Ipsum",
+        "image": "/assets/owen.jpeg",
         "github": "https://github.com/OwenMG",
         "portfolio": "loremipsum.com"
     },
     {
         "name": "Tiffany Dempsey",
-        "about": "Lorem Ipsum",
+        "image": "/assets/Tiffany.jpeg",
         "github": "https://github.com/Tiffany7809",
         "portfolio": "loremipsum.com"
     }

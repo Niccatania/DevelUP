@@ -33,6 +33,18 @@ export const QUERY_ALL_SERVICES = gql`
 	}
 `;
 
+export const QUERY_ALL_DEVS = gql`
+	{
+		allDevelopers {
+			_id
+			name
+			image
+			github
+			portfolio
+		}
+	}
+`;
+
 export const QUERY_CHECKOUT = gql`
 	query getCheckout($services: [ID]!) {
 		checkout(services: $services) {
