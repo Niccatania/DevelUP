@@ -1,30 +1,26 @@
 import React from "react";
-import { Flex, Heading, Input, Button, Spacer, Box } from "@chakra-ui/react";
-import { SimpleGrid } from "@chakra-ui/react";
-const DevProfile = (props) => {
+import {Button, Box, Spacer, Avatar,} from "@chakra-ui/react";
+import { SimpleGrid } from '@chakra-ui/react' 
+import { Link } from "react-router-dom";
+const devCard = (dev) => {
   return (
-    <div>
-      <SimpleGrid minChildWidth="120px" spacing="40px">
-        {/* Here we use a map to render our devProfile with prop data provided in DevData */}
-        {props.devData.map((dev) => {
-          return (
-            <div key={dev.id}>
-              <Box bg="gray.400" w="200px" h="200px">
-                <center>
-                  <h1>{dev.name}</h1>
-                  <img
-                    alt="Developer profile"
-                    src={`${process.env.PUBLIC_URL}${dev.image}`}
-                  />
-                </center>
-              </Box>
-              <Spacer />
-            </div>
-          );
-        })}
-      </SimpleGrid>
-    </div>
+    <div className="rcorners1">
+     <Box >
+      <SimpleGrid minChildWidth='120px' spacing='40px'>
+            <div className="cardClass">
+            <Box bg="#9DCBBA" w="300px" h="400px" borderRadius="25px">
+            <Box   color="aliceblue" bg="06A77D" w="300px"  borderRadius="25px">
+                    <Box bg="#005377" w="300px" h="300px" borderRadius="25px">
+                        <Avatar></Avatar>
+                        <p>{dev.DevId}</p>
+                    </Box>
+                    </Box>
+                    </Box>
+                    </div>
+                    <Spacer />     
+         </SimpleGrid>
+         </Box>
+</div>
   );
-};
-
-export default DevProfile;
+  };
+export default devCard;
