@@ -45,6 +45,12 @@ const Navbar = () => {
                     <Link to="/Services">Start a project
                     </Link>
                     </li>
+                     
+                <li className="ind" >
+                    <Link to="/checkout">Checkout
+                    </Link>
+                    </li>
+
                 {/* 
                 <li className="ind">Cart</li>
                 <li className="ind">Contact us</li> */}

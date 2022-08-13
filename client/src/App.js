@@ -67,7 +67,7 @@ export default function App() {
 
               <Route path="/devProfile/:devId" element={<DevProfile />} />
 
-              <Route path="/Profile/checkout" element={<Checkout />} />
+              <Route path="/checkout" element={<Checkout />} />
 
             </Routes>
         </Router>

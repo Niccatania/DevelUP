@@ -21,7 +21,7 @@ const Services = () => {
             Refactor an Existing Site
           </Button>
           </Link>
-          <Link to="/services/customRequest">
+          <Link to="customRequest">
           <Button colorScheme="teal">
             Create Custom Request
           </Button>
