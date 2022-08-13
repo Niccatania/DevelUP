@@ -29,7 +29,7 @@ const Navbar = () => {
                         Logout</Link>
                         </li>
                         <li className="ind">
-                        <Link to="/ClientProfile">
+                        <Link to="/client-profile">
                         Client Profile</Link>
                         </li>
                     </>
@@ -37,7 +37,7 @@ const Navbar = () => {
             } else {
                 return (
                     <li className="ind">
-                    <Link to="/Login" >
+                    <Link to="/login" >
                     Login</Link>
                     </li>
                 );
@@ -59,7 +59,7 @@ const Navbar = () => {
                 </li> */}
                 
                 <li className="ind" >
-                    <Link to="/Services">Start a project
+                    <Link to="/services/select">Start a project
                     </Link>
                     </li>
                 {/* 

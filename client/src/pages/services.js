@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import NewSite from "../components/newSite";
+import RefactorSite from "../components/refactorSite";
+import CustomRequest from "../components/customRequest";
 import { Container, Button, Center, Heading, Spacer,Box, Divider, ButtonGroup } from "@chakra-ui/react";
 
 const Services = () => {
@@ -11,27 +14,26 @@ const Services = () => {
         </Center>
         <Center>
           <ButtonGroup>
-          <Link to="/services/newsite">
+          <Link to="/services/new-site">
             <Button colorScheme="teal">
               Create a Site From Scratch
             </Button>
           </Link>
-          <Link to="/services/refactorsite">
-          <Button colorScheme="teal">
-            Refactor an Existing Site
-          </Button>
+          <Link to="/services/refactor-site">
+            <Button colorScheme="teal">
+              Refactor an Existing Site
+            </Button>
           </Link>
-          <Link to="/services/customRequest">
-          <Button colorScheme="teal">
-            Create Custom Request
-          </Button>
+          <Link to="/services/custom-request">
+            <Button colorScheme="teal">
+              Create Custom Request
+            </Button>
           </Link>
           </ButtonGroup>
         </Center>
       </Box>
  </Center>
-
-  );
+ );
 };
 
 export default Services;
