@@ -24,6 +24,7 @@ body {
   .listClass{
     
     display: inline;
+
     padding: 0.8rem;
     margin: 0;
     list-style: none;
@@ -37,11 +38,11 @@ body {
     justify-content: flex-end;
   }
   .ind:hover{
-  
+
     border-radius: 15px;
        background-color: #9DCBBA;
        transform:scale(1.4);
-      
+
      }
   
   
@@ -58,12 +59,14 @@ body {
            background-color: #9DCBBA;
            transform:scale(0.9);
          }
+
   
     .rcorners1 {
       border-radius: 25px;
       background: #bdfffd;
       padding: 50px;
       height: 500px; 
+
     }
 
     .skills {
@@ -87,3 +90,4 @@ body {
         margin: 0 7px 7px 0;
         padding: 7px;
       }
+

@@ -14,6 +14,7 @@ import {
 import "./index.css";
 // SimpleGrid is keeping our cards in the row and making them responsive
 import { SimpleGrid } from "@chakra-ui/react";
+
 import { Link } from "react-router-dom";
 const devCard = (props) => {
   return (
@@ -114,6 +115,7 @@ const devCard = (props) => {
         </SimpleGrid>
       </Box>
     </div>
+
   );
 };
 export default devCard;

@@ -14,6 +14,7 @@ import {
   Avatar,
   Divider,
   Text,
+
   SimpleGrid
 } from "@chakra-ui/react";
 
@@ -72,3 +73,4 @@ DevelUp
  );
 };
 export default Landing;
+

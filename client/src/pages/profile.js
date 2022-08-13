@@ -7,11 +7,14 @@ import {
   Divider,
   Thead,
   Table,
+
   Tbody,
   Tr,
   Th,
   Td,
-  TableCaption,
+  Table,
+  Thead,
+  Tfoot,
   TableContainer,
 } from "@chakra-ui/react";
 

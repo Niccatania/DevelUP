@@ -1,24 +1,24 @@
 import React from "react";
+
 import Auth from "../utils/auth";
 import { SimpleGrid } from '@chakra-ui/react' 
 import "./index.css"
-import {
-    Container,
-    Button,
-    ButtonGroup,
-    Center,
-    Square,
-    Circle,
-    Box,
-    Flex,
-    Spacer,
-    Heading,
-    Avatar,
-    Divider,
-  } from "@chakra-ui/react";
-  import { Link } from "react-router-dom";
 
-const Navbar = () => {
+import {
+  Container,
+  Button,
+  ButtonGroup,
+  Center,
+  Square,
+  Circle,
+  Box,
+  Flex,
+  Spacer,
+  Heading,
+  Avatar,
+  Divider,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
         function showLoginLogout() {
             if (Auth.loggedIn()) {
@@ -84,3 +84,4 @@ const Navbar = () => {
     );
 }
 export default Navbar
+

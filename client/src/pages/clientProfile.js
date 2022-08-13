@@ -1,11 +1,15 @@
 import React from "react";
+
 // import { useQuery } from "@apollo/client";
 // import { QUERY_USER } from "../utils/queries";
 
 // import { Link } from "react-router-dom";
 
 import {
+
+
   Box,
+
   Container,
   Button,
   ButtonGroup,
@@ -76,3 +80,4 @@ const ClientProfile =(props) => {
 }
 
 export default ClientProfile;
+
