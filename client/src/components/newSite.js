@@ -12,7 +12,7 @@ import {
 
   ButtonGroup,
 } from "@chakra-ui/react";
-const newSite = () => {
+const NewSite = () => {
   return (
     <Center>
       <Box rounded={20} m="5%" w="80%" bg="teal.600">
@@ -32,6 +32,7 @@ const newSite = () => {
             <FormHelperText color="white">
               Please enter your First and Last name.
             </FormHelperText>
+
 
             <FormLabel>
               Please give a description of what site you want built.
@@ -61,4 +62,4 @@ const newSite = () => {
   );
 };
 
-export default newSite;
+export default NewSite;

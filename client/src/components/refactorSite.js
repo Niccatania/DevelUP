@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const refactorSite = () => {
+const RefactorSite = () => {
   return (
 
     <Center>
@@ -56,9 +56,11 @@ const refactorSite = () => {
         <Center>
         <ButtonGroup>
 
+
         <Button  mb ="4%">Add To Cart</Button>
 
             <Link to ="/services"><Button  mb ="4%">Go Back</Button></Link>
+
         </ButtonGroup>
         </Center>
      
@@ -69,4 +71,4 @@ const refactorSite = () => {
   );
 };
 
-export default refactorSite;
+export default RefactorSite;

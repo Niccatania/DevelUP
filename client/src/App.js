@@ -8,7 +8,7 @@ import {
 
 import { setContext } from "@apollo/client/link/context";
 
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-router-dom";
 
 import Landing from "./pages/landing";
 import Login from "./pages/login";
@@ -42,6 +42,15 @@ const client = new ApolloClient({
 });
 
 export default function App() {
+
+  const ServiceLayout = () => {
+    return (
+      <div>
+        <Outlet />
+      </div>
+    );
+  };
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -60,16 +69,23 @@ export default function App() {
 
           <Route path="/services/refactorsite" element={<RefactorSite />} />
 
-          <Route path="/services/customrequest" element={<CustomRequest />} />
 
-          <Route path="/profile" element={<Profile />} />
 
-          <Route path="/devProfile/:devId" element={<DevProfile />} />
+              {/* <Route path="/DevProfile" element={<DevProfile />} /> */}
+              <Route path="/client-profile" element={<ClientProfile />} />
 
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </Router>
-    </ApolloProvider>
+              <Route path="services" element={<ServiceLayout />}>
+                <Route path="select" element={<Services />} />
+                <Route path="new-site" element={<NewSite />} />
+                <Route path="refactor-site" element={<RefactorSite />} />
+                <Route path="custom-request" element={<CustomRequest />} />
+              </Route>
+
+              <Route path="/login" element={<Login />} />
+
+              {/* <Route path="/devProfile/:devId" element={<DevProfile />} /> */}
+
+              <Route path="/profile/checkout" element={<Checkout />} />
 
   );
 }

@@ -1,7 +1,9 @@
 import React from "react";
 
-import { SimpleGrid } from "@chakra-ui/react";
-import "./index.css";
+import Auth from "../utils/auth";
+import { SimpleGrid } from '@chakra-ui/react' 
+import "./index.css"
+
 import {
   Container,
   Button,
@@ -18,41 +20,68 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  return (
-    <div>
-      <nav className="navBar">
-        <ul className="listClass">
-          <li className="ind">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="ind">
-            <Link to="/Login">Login</Link>
-          </li>
-          <li className="ind">
-            <Link to="/DevProfile">Developer Profile</Link>
-          </li>
-          <li className="ind">Client Profile</li>
-          <li className="ind">
-            {" "}
-            <Link to="/services">Start a project</Link>
-          </li>
-          <li className="ind">
-            <Link to="/checkout"> Cart </Link>
-          </li>
-          <li className="ind">
-            <Link to="/contact">Contact us</Link>
-          </li>
-        </ul>
-
-        <Box>
-          <Button className="loginBtn" colorScheme="blue">
-            <Link to="/Login">Login/Signup</Link>
-          </Button>
-        </Box>
-      </nav>
-    </div>
-  );
-};
-export default Navbar;
+        function showLoginLogout() {
+            if (Auth.loggedIn()) {
+                return (
+                    <>
+                        <li className="ind">
+                        <Link to="/" onClick={() => Auth.logout()}>
+                        Logout</Link>
+                        </li>
+                        <li className="ind">
+                        <Link to="/client-profile">
+                        Client Profile</Link>
+                        </li>
+                    </>
+                );
+            } else {
+                return (
+                    <li className="ind">
+                    <Link to="/login" >
+                    Login</Link>
+                    </li>
+                );
+            }
+        }
+       
+    return (
+        <div>
+            <nav className="navBar">
+            <ul className="listClass">
+                <li className="ind">
+                <Link to="/" >
+                Home</Link>
+                </li>
+                {showLoginLogout()}
+                {/* <li className="ind">
+                <Link to="/DevProfile" >
+                Developer Profile</Link>
+                </li> */}
+                
+                <li className="ind" >
+                    <Link to="/services/select">Start a project
+                    </Link>
+                    </li>
+                {/* 
+                <li className="ind">Cart</li>
+                <li className="ind">Contact us</li> */}
+                </ul>
+                
+                {/* <Box>
+       {" "}
+       <Button className="loginBtn" colorScheme="blue">
+        <Link to="/Login" >
+         Login/Signup
+         </Link>
+       </Button>
+    
+     </Box>
+            */}
+         </nav> 
+         </div>
+       
+        
+    );
+}
+export default Navbar
 

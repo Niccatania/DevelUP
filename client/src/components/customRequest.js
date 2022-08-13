@@ -12,7 +12,9 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/react";
-const customRequest = (props) => {
+
+const CustomRequest = () => {
+
   return (
     <Center>
       <Box rounded={20} m="5%" w="80%" bg="teal.600">
@@ -32,6 +34,7 @@ const customRequest = (props) => {
             <FormHelperText color="white">
               Please enter your First and Last name.
             </FormHelperText>
+
 
             <FormLabel>
               Please give a description of what your request is.
@@ -65,4 +68,4 @@ const customRequest = (props) => {
   );
 };
 
-export default customRequest;
+export default CustomRequest;
