@@ -33,11 +33,16 @@ const Navbar = () => {
             <Link to="/DevProfile">Developer Profile</Link>
           </li>
           <li className="ind">Client Profile</li>
-          <li className="ind"> <Link to = "/services" >Start a project</Link></li>
+          <li className="ind">
+            {" "}
+            <Link to="/services">Start a project</Link>
+          </li>
           <li className="ind">
             <Link to="/checkout"> Cart </Link>
           </li>
-          <li className="ind">Contact us</li>
+          <li className="ind">
+            <Link to="/contact">Contact us</Link>
+          </li>
         </ul>
 
         <Box>
