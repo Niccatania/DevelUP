@@ -1,22 +1,14 @@
 [
     {
-        "description": "Build A Website From Scratch",
-        "price": 200.00,
-        "developer": "62ee95529a013afe498e09b4"
+        "description": "Create a Site from Scratch",
+        "price": 200.00
     },
     {
-        "description": "Build A Website From Scratch",
-        "price": 200.00,
-        "developer": "62ee95529a013afe498e09b5"
+        "description": "Refactor an Existing Site",
+        "price": 75.00
     },
     {
-        "description": "Build A Website From Scratch",
-        "price": 200.00,
-        "developer": "62ee95529a013afe498e09b6"
-    },
-    {
-        "description": "Build A Website From Scratch",
-        "price": 200.00,
-        "developer": "62ee95529a013afe498e09b7"
+        "description": "Create Custom Request",
+        "price": 150.00
     }
 ]

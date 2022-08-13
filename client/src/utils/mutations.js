@@ -21,3 +21,15 @@ export const ADD_USER = gql`
   }
 }
 `;
+
+export const ADD_PROJECT = gql`
+  mutation addProject($title: String!, $description: String!, $services: [String]) {
+    addProject(title: $title, description: $description, services: $services) {
+      _id
+			title
+			status
+			description
+			dateCreated
+    }
+  }
+`;

@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_EMAIL } from "../utils/queries";
 import {
   FormControl,
   FormLabel,
@@ -13,6 +15,8 @@ import {
   ButtonGroup
 } from "@chakra-ui/react";
 const NewSite = () => {
+  const { loading, data } = useQuery(QUERY_USER_EMAIL);
+
   return (
     <Box m="5%" w="90%" bg ='teal.600'>
       <Center>
@@ -21,13 +25,13 @@ const NewSite = () => {
       <Center>
         <FormControl w="60%">
           <FormLabel>Email address</FormLabel>
-          <Input bg ='white' type="email" />
+          <Input bg ='white' type="email" value={data.user.email} />
           <FormHelperText color ="white">We'll never share your email.</FormHelperText>
           
-          <FormLabel>Name</FormLabel>
+          <FormLabel>Title</FormLabel>
           <Input bg ='white'type="name" />
           <FormHelperText color ="white">
-            Please enter your First and Last name.
+            Please enter the title of the project.
           </FormHelperText>
 
           <FormLabel>
@@ -36,9 +40,6 @@ const NewSite = () => {
           <Input bg ='white' type="description" />
           <FormHelperText color ="white"></FormHelperText>
           
-          <FormLabel>Email address</FormLabel>
-          <Input bg='white'type="email" />
-          <FormHelperText color ="white">We'll never share your email.</FormHelperText>
         </FormControl>
       </Center>
       <Center>

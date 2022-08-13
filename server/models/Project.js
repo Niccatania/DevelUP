@@ -24,7 +24,12 @@ const projectSchema = new Schema(
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
         },
-        services: [Service.schema],
+        services: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Service'
+            }
+        ],
     },
     {
         toJSON: {
