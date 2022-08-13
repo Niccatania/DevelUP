@@ -5,11 +5,13 @@ import {
   Spacer,
   Divider,
   Avatar,
-  Container,
+  Container
+
 } from "@chakra-ui/react";
 import CheckoutForm from "./checkoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -36,6 +38,7 @@ const cart = () => {
       </Box>
     </Container>
   );
+
 };
 
 export default cart;

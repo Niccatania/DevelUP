@@ -1,4 +1,5 @@
 import React from "react";
+
 import {Link} from 'react-router-dom';
 import {  Button, Center, Heading,Box, ButtonGroup } from "@chakra-ui/react";
 
@@ -7,6 +8,7 @@ const Services = () => {
   <Center>
       <Box w="70%" h="80%" pb="10%" m="5%"bg ="gray.100">
         <Center>
+
           <Heading color='#10575e' mt="10%"pb="3%">Select a Service:</Heading>
         </Center>
         <Center>

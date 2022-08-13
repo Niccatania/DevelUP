@@ -9,6 +9,7 @@ import {
   Heading,
   Box,
   Button,
+
   ButtonGroup,
 } from "@chakra-ui/react";
 const newSite = () => {
@@ -55,6 +56,8 @@ const newSite = () => {
         </Center>
       </Box>
     </Center>
+    
+    </Box>
   );
 };
 

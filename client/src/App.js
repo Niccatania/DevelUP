@@ -7,20 +7,20 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
-import { ButtonGroup, Button, Center } from "@chakra-ui/react";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import Landing from "./pages/landing";
 import Login from "./pages/login";
-import NavBar from "./components/NavBar";
-import Profile from "./pages/profile";
+import NavBar from "./components/NavBar"
 import DevProfile from "./pages/devProfile";
+import ClientProfile from "./pages/clientProfile";
 import Checkout from "./pages/checkout";
 import Services from "./pages/services";
 import NewSite from "./components/newSite";
 import RefactorSite from "./components/refactorSite";
 import CustomRequest from "./components/customRequest";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -70,5 +70,6 @@ export default function App() {
         </Routes>
       </Router>
     </ApolloProvider>
+
   );
 }

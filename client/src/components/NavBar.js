@@ -1,4 +1,5 @@
 import React from "react";
+
 import { SimpleGrid } from "@chakra-ui/react";
 import "./index.css";
 import {
@@ -49,3 +50,4 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
