@@ -1,29 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DevCard from "./devCard";
-const devData = [
-  {
-    name: "Tiffany Dempsey",
-    image: "/assets/dev.webp",
-  },
-  {
-    name: "Nic Catania",
-    image: "/assets/dev.webp",
-  },
-  {
-    name: "Owen Greengo",
-    image: "/assets/dev.webp",
-  },
-  {
-    name: "Supriya Sharma",
-    image: "/assets/dev.webp",
-  },
- 
-];
+import { useQuery } from '@apollo/client';
+import { QUERY_ALL_DEVS } from "../utils/queries";
+// import DevProfile from "/pages/devProfile";
 
 export default function Container() {
+
+  const { loading, data } = useQuery(QUERY_ALL_DEVS);
+  if (loading) {
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    )
+  }
+
   return (
     <div>
-      <DevCard devData={devData} />
+      <DevCard devData={data.allDevelopers} />
+      {/* <DevProfile devData={devData} /> */}
     </div>
   );
 }
