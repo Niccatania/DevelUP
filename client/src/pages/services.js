@@ -1,13 +1,15 @@
 import React from "react";
-import {BrowserRouter as Router, Link} from 'react-router-dom';
-import { Container, Button, Center, Heading, Spacer,Box, Divider, ButtonGroup } from "@chakra-ui/react";
+
+import {Link} from 'react-router-dom';
+import {  Button, Center, Heading,Box, ButtonGroup } from "@chakra-ui/react";
 
 const Services = () => {
   return (
   <Center>
       <Box w="70%" h="80%" pb="10%" m="5%"bg ="gray.100">
         <Center>
-          <Heading mt="10%"pb="3%">Select a Service:</Heading>
+
+          <Heading color='#10575e' mt="10%"pb="3%">Select a Service:</Heading>
         </Center>
         <Center>
           <ButtonGroup>

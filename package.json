@@ -15,7 +15,8 @@
     "devDependencies": {
         "concurrently": "^7.3.0"
     },
-    "dependencies": {
+        "@stripe/react-stripe-js": "^1.10.0",
+
         "react-table": "^7.8.0"
     }
 }
