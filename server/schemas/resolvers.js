@@ -10,16 +10,22 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.findById(context.user._id).populate({
-                    populate: 'projects'
-                });
-      
-                user.projects.sort((a, b) => b.dateCreated - a.dateCreated);
-      
+                const user = await User.findById(context.user._id).populate('projects');
                 return user;
             }
-
             throw new AuthenticationError('Not logged in');
+        // user: async (parent, args, context) => {
+        //     if (context.user) {
+        //         const user = await User.findById(context.user._id).populate({
+        //             populate: 'projects'
+        //         });
+      
+        //         user.projects.sort((a, b) => b.dateCreated - a.dateCreated);
+      
+        //         return user;
+        //     }
+
+        //     throw new AuthenticationError('Not logged in');
         },
         allUsers: async (parent, args, context) => {
             return await User.find().populate('projects');
@@ -103,24 +109,22 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addProject: async (parent, { title, description, userid, serviceIds }, context) => {
-            // if (context.user) {
-                let services =[]
-                for(i=0;i<serviceIds.length;i++){
-                    const newserv = await Service.findById(serviceIds[i]).populate('developer');
-                    services.push(newserv);
-                }
-                console.log(services)
-                const project = Project.create({ title, description, services: services });
+        addProject: async (parent, { title, description, services }, context) => {
+            if (context.user) {
+                // let services =[]
+                // for(i=0;i<serviceIds.length;i++){
+                //     const newserv = await Service.findById(serviceIds[i]).populate('developer');
+                //     services.push(newserv);
+                // }
+                // console.log(services)
+                const project = Project.create({ title, description, services });
 
-
-
-                await User.findByIdAndUpdate(userid, {$push: {projects: project } });
+                await User.findByIdAndUpdate(context.user._id, {$push: {projects: project } });
 
                 return project
-            // }
+            }
 
-            // throw new AuthenticationError('Not logged in');
+            throw new AuthenticationError('Not logged in');
         },
         addService: async (parent, {description, price, devId}, context) => {
             const dev = await Developer.findById(devId);

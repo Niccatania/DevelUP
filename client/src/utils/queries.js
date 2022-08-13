@@ -3,32 +3,34 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
 	{
 		user {
-			email
+			_id
+   			email
 			projects {
 				_id
 				title
-				description
 				status
-				services {
-					_id
-					description
-					price
-					developer
-				}
+				description
 				dateCreated
 			}
+  		}
+	}
+`;
+
+export const QUERY_USER_EMAIL = gql`
+	{
+		user {
+			_id
+			email
 		}
 	}
 `;
 
 export const QUERY_ALL_SERVICES = gql`
 	{
-		services {
+		allServices {
 			_id
 			description
-			price
-			developer
-		}
+  		}
 	}
 `;
 

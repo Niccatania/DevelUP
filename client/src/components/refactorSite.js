@@ -1,4 +1,6 @@
 import React from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_EMAIL } from "../utils/queries";
 import {
   FormControl,
   FormLabel,
@@ -15,6 +17,8 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 
 const RefactorSite = () => {
+  const { loading, data } = useQuery(QUERY_USER_EMAIL);
+
   return (
     <Box m="5%" w="90%" bg="teal.600">
       <Center>
@@ -23,15 +27,15 @@ const RefactorSite = () => {
       <Center>
         <FormControl w="60%">
           <FormLabel>Email address</FormLabel>
-          <Input bg="white" type="email" />
+          <Input bg="white" type="email" value={data.user.email} />
           <FormHelperText color="white">
             We'll never share your email.
           </FormHelperText>
 
-          <FormLabel>Name</FormLabel>
+          <FormLabel>Title</FormLabel>
           <Input bg="white" type="name" />
           <FormHelperText color="white">
-            Please enter your First and Last name.
+            Please enter the title of the project.
           </FormHelperText>
 
           <FormLabel>
@@ -41,11 +45,6 @@ const RefactorSite = () => {
           <Input bg="white" type="description" />
           <FormHelperText color="white"></FormHelperText>
 
-          <FormLabel>Email address</FormLabel>
-          <Input bg="white" type="email" />
-          <FormHelperText color="white">
-            We'll never share your email.
-          </FormHelperText>
         </FormControl>
         </Center>
         <Center>
