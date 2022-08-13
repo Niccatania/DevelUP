@@ -12,7 +12,7 @@ import {
   Button,
   ButtonGroup
 } from "@chakra-ui/react";
-const customRequest = () => {
+const CustomRequest = () => {
   return (
     <Box m="5%" w="90%" bg ='teal.600'>
       <Center>
@@ -44,11 +44,11 @@ const customRequest = () => {
       <Center>
         <ButtonGroup>
             <Button  mb ="4%">Submit</Button>
-            <Link to ="/services"><Button  mb ="4%">Go Back</Button></Link>
+            <Link to ="/services/select"><Button  mb ="4%">Go Back</Button></Link>
         </ButtonGroup>
         </Center>
     </Box>
   );
 };
 
-export default customRequest;
+export default CustomRequest;

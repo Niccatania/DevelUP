@@ -1,4 +1,5 @@
 import React from "react";
+import Auth from "../utils/auth";
 import { SimpleGrid } from '@chakra-ui/react' 
 import "./index.css"
 import {
@@ -18,8 +19,32 @@ import {
   import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return(
+
+        function showLoginLogout() {
+            if (Auth.loggedIn()) {
+                return (
+                    <>
+                        <li className="ind">
+                        <Link to="/" onClick={() => Auth.logout()}>
+                        Logout</Link>
+                        </li>
+                        <li className="ind">
+                        <Link to="/client-profile">
+                        Client Profile</Link>
+                        </li>
+                    </>
+                );
+            } else {
+                return (
+                    <li className="ind">
+                    <Link to="/login" >
+                    Login</Link>
+                    </li>
+                );
+            }
+        }
        
+    return (
         <div>
             <nav className="navBar">
             <ul className="listClass">
@@ -27,22 +52,14 @@ const Navbar = () => {
                 <Link to="/" >
                 Home</Link>
                 </li>
-                <li className="ind">
-                <Link to="/Login" >
-                Login</Link>
-                </li>
+                {showLoginLogout()}
                 {/* <li className="ind">
                 <Link to="/DevProfile" >
                 Developer Profile</Link>
                 </li> */}
-
-                <li className="ind">
-                <Link to="/ClientProfile">
-                    Client Profile</Link>
-                </li>
                 
                 <li className="ind" >
-                    <Link to="/Services">Start a project
+                    <Link to="/services/select">Start a project
                     </Link>
                     </li>
                 {/* 
@@ -64,6 +81,6 @@ const Navbar = () => {
          </div>
        
         
-    )
+    );
 }
 export default Navbar

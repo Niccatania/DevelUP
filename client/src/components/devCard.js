@@ -64,7 +64,7 @@ const devCard = (props) => {
                                 size="lg"
                                   m="1rem"
                                   colorScheme="blue"
-                                  to="/devProfile/"
+                                  // to="/devProfile/"
                                 >
                                   Portfolio
                                 </Button>
@@ -76,9 +76,9 @@ const devCard = (props) => {
                               size="lg"
                                   m="1rem"
                                   colorScheme="blue"
-                                  to="/github/"
+                                  // to="/github/"
                                 >
-                                 github
+                                 GitHub
                                 </Button>
                               </a>
                              
@@ -95,7 +95,7 @@ const devCard = (props) => {
                               </a>
                               </li> */}
                             </ul>
-                            <Link to="/Services">
+                            <Link to="/services/select">
                               <Button size="lg" m="1.2rem" colorScheme="purple">
                                 Hire me!
                               </Button>
