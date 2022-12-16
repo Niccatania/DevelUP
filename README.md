@@ -2,6 +2,10 @@
   # DevelUp
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+  ## Deployed Link
+
+  https://develup.herokuapp.com/
+
   ## Table of Contents
 
   1. [Description](#description)
@@ -19,10 +23,6 @@
   ## Description
 
   DevelUp is a project-sourcing site for professional web pages. It connects users to a team of developers to comission a Full-Stack related service.
-
-  ## Installation Instructions
-
-  To install, clone the git repository to your local machine, or visit the live heroku deployment [here](https://pacific-atoll-45271.herokuapp.com/)
 
   ## Usage Information
 
