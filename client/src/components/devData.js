@@ -18,7 +18,7 @@ export default function Container() {
   return (
     <div>
       <DevCard devData={data.allDevelopers} />
-      {/* <DevProfile devData={devData} /> */}
+  
     </div>
   );
 }

@@ -25,6 +25,7 @@ import DevProfile from "./devProfile";
 import Profile from "./clientProfile";
 const Landing = () => {
   return (
+    
     <div>
     <Center>
     <Text
@@ -35,12 +36,13 @@ const Landing = () => {
 >
 DevelUp
 </Text>
-       <Heading > </Heading>
+       
      </Center>
+
+
      <Divider  orientation='horizontal' />
      <div >
-      {/* <Profile /> */}
-      <Box m={"9rem"}>
+      <Box mt={"125px"} mb={"125px"} ml={"20px"} mr={"20px"}>
         <Text 
         color='#10575e'
          fontSize='4xl'
