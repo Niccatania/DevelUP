@@ -45,40 +45,25 @@ const Navbar = () => {
         }
        
     return (
-        <div>
+        
+             <Box bgGradient="linear(to-l, #7928CA, #FF0080)">
             <nav className="navBar">
-            <ul className="listClass">
-                <li className="ind">
-                <Link to="/" >
-                Home</Link>
-                </li>
-                {showLoginLogout()}
-                {/* <li className="ind">
-                <Link to="/DevProfile" >
-                Developer Profile</Link>
-                </li> */}
-                
-                <li className="ind" >
-                    <Link to="/services/select">Start a project
-                    </Link>
-                    </li>
-                {/* 
-                <li className="ind">Cart</li>
-                <li className="ind">Contact us</li> */}
-                </ul>
-                
-                {/* <Box>
-       {" "}
-       <Button className="loginBtn" colorScheme="blue">
-        <Link to="/Login" >
-         Login/Signup
-         </Link>
-       </Button>
-    
-     </Box>
-            */}
-         </nav> 
-         </div>
+                <Box as="ul" className="listClass">
+                    <Box as="li" className="ind">
+                        <Link as={Link} to="/">
+                            Home
+                        </Link>
+                    </Box>
+                    {showLoginLogout()}
+                    <Box as="li" className="ind">
+                        <Link as={Link} to="/services/select">
+                            Start a project
+                        </Link>
+                    </Box>
+                </Box>
+            </nav>
+        </Box>
+        
        
         
     );

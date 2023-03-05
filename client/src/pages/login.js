@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { Flex, Heading, Input, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Input,
+  Button,
+  Stack
+} from "@chakra-ui/react";
 import { useMutation } from '@apollo/client';
 import { LOGIN, ADD_USER } from '../utils/mutations';
 import AuthService from '../utils/auth';
-// Contains a login and signup form, we may nee d seperate these once the routes/ event handlers come in
 
 function Login(props) {
   const [formState, setFormState] = useState({ loginEmail: '', loginPassword: ''});
@@ -52,50 +57,54 @@ function Login(props) {
       [name]: value,
     });
   };
+
   return (
-    <Flex height="100vh" alignItems="center" justifyContent="center">
-      <Flex direction="column" background="gray.100" p={12} rounded={6}>
-        <Heading mb={6}>Log In</Heading>
-        <Input
-          placeholder="email@email.com"
-          variant="filled"
-          mb={3}
-          name="loginEmail"
-          type="email"
-          onChange={handleChange}
-        ></Input>
-        <Input
-          placeholder="*******"
-          variant="filled"
-          mb={3}
-          name="loginPassword"
-          type="password"
-          onChange={handleChange}
-        ></Input>
-        <Button onClick={handleLoginSubmit} colorScheme="teal">Log In</Button>
-      </Flex>
-      <Flex direction="column" background="gray.100" ml={4} p={12} rounded={6}>
-        <Heading mb={6}>Sign up</Heading>
-        <Input
-          placeholder="email@email.com"
-          variant="filled"
-          mb={3}
-          name="addEmail"
-          type="email"
-          onChange={handleChange}
-        ></Input>
-        <Input
-          placeholder="*******"
-          variant="filled"
-          mb={3}
-          name="addPassword"
-          type="password"
-          onChange={handleChange}
-        ></Input>
-        <Button onClick={handleSignupSubmit} colorScheme="teal">Sign up</Button>
-      </Flex>
+    <Flex height="100vh" alignItems="center" justifyContent="center" flexDirection="column">
+      <Stack direction={{base: "column", md: "row"}} spacing="4">
+        <Flex direction="column" background="gray.100" p={12} rounded={6}>
+          <Heading mb={6}>Log In</Heading>
+          <Input
+            placeholder="email@email.com"
+            variant="filled"
+            mb={3}
+            name="loginEmail"
+            type="email"
+            onChange={handleChange}
+          ></Input>
+          <Input
+            placeholder="*******"
+            variant="filled"
+            mb={3}
+            name="loginPassword"
+            type="password"
+            onChange={handleChange}
+          ></Input>
+          <Button onClick={handleLoginSubmit} colorScheme="teal">Log In</Button>
+        </Flex>
+        <Flex direction="column" background="gray.100" ml={{base: 0, md: 4}} mt={{base: 4, md: 0}} p={12} rounded={6}>
+          <Heading mb={6}>Sign up</Heading>
+          <Input
+            placeholder="email@email.com"
+            variant="filled"
+            mb={3}
+            name="addEmail"
+            type="email"
+            onChange={handleChange}
+          ></Input>
+          <Input
+            placeholder="*******"
+            variant="filled"
+            mb={3}
+            name="addPassword"
+            type="password"
+            onChange={handleChange}
+          ></Input>
+          <Button onClick={handleSignupSubmit} colorScheme="teal">Sign up</Button>
+        </Flex>
+      </Stack>
     </Flex>
   );
 };
 
 export default Login;
+
